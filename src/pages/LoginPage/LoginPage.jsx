@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './LoginPage.css'
 
 export default function LoginPage() {
     const [userName, setUserName] = useState('');
@@ -17,7 +18,7 @@ export default function LoginPage() {
     };
 
     return (
-        <div>
+        <main className='container'>
             <h1>Bienvenue chez nous !</h1>
             <h2>Connectez-vous</h2>
             <form onSubmit={handleSubmit}>
@@ -30,6 +31,6 @@ export default function LoginPage() {
                 />
                 <button type="submit">Accédez à mon espace</button>
             </form>
-        </div>
+        </main>
     );
 }
