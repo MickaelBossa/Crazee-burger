@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function App() {
     const [userName, setUserName] = useState('');
+
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setUserName(e.target.value);
@@ -9,8 +12,7 @@ export default function App() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        alert(`Bonjour ${userName}`);
+        navigate(`/order/${userName}`);
         setUserName('');
     };
 
