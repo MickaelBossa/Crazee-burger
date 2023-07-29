@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function App() {
+export default function LoginPage() {
     const [userName, setUserName] = useState('');
 
     const navigate = useNavigate();
@@ -24,11 +24,11 @@ export default function App() {
                 <input
                     type="text"
                     required
-                    placeholder="Entrez votre prénom..."
+                    placeholder="Entrez votre prénom"
                     value={userName}
                     onChange={(e) => handleChange(e)}
                 />
-                <button type="submit">Accédez à votre espace</button>
+                <button type="submit">Accédez à mon espace</button>
             </form>
         </div>
     );
