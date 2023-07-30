@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import LoginPage from './pages/LoginPage/LoginPage.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import OrderPage from './pages/OrderPage/OrderPage.jsx';
@@ -9,7 +9,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage.jsx';
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <App />,
+        element: <LoginPage />,
         errorElement: <ErrorPage />,
     },
     {

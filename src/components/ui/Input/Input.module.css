@@ -1,0 +1,25 @@
+.container {
+    width: 400px;
+    margin: 0 auto;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    height: var(--xl);
+    margin-bottom: var(--md);
+    gap: var(--sm);
+}
+
+.container input {
+    border: none;
+    width: 100%;
+    margin-right: var(--md);
+}
+
+.container input::placeholder {
+    color: var(--greyLight);
+    font-family: Arial;
+    font-size: var(--P0);
+    font-style: normal;
+    font-weight: var(--regular);
+    line-height: 17px;
+}

@@ -1,0 +1,8 @@
+.personIcon {
+    color: var(--greyBlue);
+    margin-left: var(--md);
+}
+
+.chevronIcon {
+    color: var(--white);
+}

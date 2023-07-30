@@ -1,0 +1,51 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    ::before {
+        content: '';
+        background: url('burger-background.jpg');
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: darken;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        box-shadow: inset 0 0 500px 100px #000000;
+    }
+}
+
+.welcomeTitle {
+    color: var(--white);
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: var(--P5);
+    font-style: normal;
+    font-weight: var(--bold);
+    line-height: 61px;
+    margin-bottom: var(--lg);
+}
+
+.breakHr {
+    width: 400px;
+    height: 3px;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    margin-bottom: var(--lg);
+}
+
+.loginTitle {
+    color: var(--white);
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: var(--P4);
+    font-style: normal;
+    font-weight: var(--bold);
+    line-height: 46px;
+    margin-bottom: var(--md);
+}

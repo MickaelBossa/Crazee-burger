@@ -1,0 +1,22 @@
+.container {
+    width: 400px;
+    height: var(--xl);
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.container button {
+    border: none;
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    font-family: Arial;
+    font-size: var(--P0);
+    font-style: normal;
+    font-weight: var(--bold);
+    line-height: 15px;
+}
