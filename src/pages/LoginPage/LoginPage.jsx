@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LoginPage.css'
+import { BsPersonCircle, BsChevronRight } from 'react-icons/bs';
+import './LoginPage.css';
 
 export default function LoginPage() {
     const [userName, setUserName] = useState('');
@@ -18,18 +19,34 @@ export default function LoginPage() {
     };
 
     return (
-        <main className='container'>
-            <h1>Bienvenue chez nous !</h1>
-            <h2>Connectez-vous</h2>
+        <main className="container">
+            <h1 className="logo-title">
+                Crazee{' '}
+                <img
+                    src="logo-orange.png"
+                    alt="Logo Crazee Burger"
+                    className="logo-img"
+                />{' '}
+                Burger
+            </h1>
+            <h2 className="welcome-title">Bienvenue chez nous !</h2>
+            <hr className="break-hr" />
+            <h3 className="login-title">Connectez-vous</h3>
             <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    required
-                    placeholder="Entrez votre prénom"
-                    value={userName}
-                    onChange={(e) => handleChange(e)}
-                />
-                <button type="submit">Accédez à mon espace</button>
+                <div className="login-input-container">
+                    <BsPersonCircle className='person-icon' />
+                    <input
+                        type="text"
+                        required
+                        placeholder="Entrez votre prénom"
+                        value={userName}
+                        onChange={(e) => handleChange(e)}
+                    />
+                </div>
+                <div className='login-btn-container'>
+                    <button type="submit">Accédez à mon espace</button>
+                    <BsChevronRight className='chevron-icon' />
+                </div>
             </form>
         </main>
     );
