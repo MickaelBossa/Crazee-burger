@@ -1,13 +1,13 @@
-import './Logo.css';
+import styles from './Logo.module.css';
 
 export default function Logo() {
     return (
-        <h1 className="logo-title">
+        <h1 className={styles.logoTitle}>
             Crazee{' '}
             <img
                 src="logo-orange.png"
                 alt="Logo Crazee Burger"
-                className="logo-img"
+                className={styles.logoImg}
             />{' '}
             Burger
         </h1>

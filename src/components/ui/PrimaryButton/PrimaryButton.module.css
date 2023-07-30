@@ -1,4 +1,4 @@
-.login-btn-container {
+.container {
     width: 400px;
     height: var(--xl);
     background-color: var(--primary);
@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 
-.login-btn-container button {
+.container button {
     border: none;
     background-color: var(--primary);
     color: var(--white);

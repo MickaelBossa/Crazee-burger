@@ -1,4 +1,4 @@
-.logo-title {
+.logoTitle {
     font-size: 2rem;
     display: flex;
     color: #ff9400;
@@ -14,7 +14,7 @@
     margin-bottom: 72px;
 }
 
-.logo-img {
+.logoImg {
     width: 200px;
     height: 150px;
 }

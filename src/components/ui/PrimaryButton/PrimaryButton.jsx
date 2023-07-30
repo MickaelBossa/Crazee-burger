@@ -1,10 +1,10 @@
-import './PrimaryButton.css'
+import styles from './PrimaryButton.module.css';
 
-export default function PrimaryButton({Icon}) {
-  return (
-    <div className="login-btn-container">
-                <button type="submit">Accédez à mon espace</button>
-                {Icon && Icon}
-            </div>
-  )
+export default function PrimaryButton({ Icon }) {
+    return (
+        <div className={styles.container}>
+            <button type="submit">Accédez à mon espace</button>
+            {Icon && Icon}
+        </div>
+    );
 }

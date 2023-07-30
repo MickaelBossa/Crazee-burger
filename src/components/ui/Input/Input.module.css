@@ -1,4 +1,4 @@
-.login-input-container {
+.container {
     width: 400px;
     margin: 0 auto;
     background-color: var(--white);
@@ -9,13 +9,13 @@
     gap: var(--sm);
 }
 
-.login-input-container input {
+.container input {
     border: none;
     width: 100%;
     margin-right: var(--md);
 }
 
-.login-input-container input::placeholder {
+.container input::placeholder {
     color: var(--greyLight);
     font-family: Arial;
     font-size: var(--P0);

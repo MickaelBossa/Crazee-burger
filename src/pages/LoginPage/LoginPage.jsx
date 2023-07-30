@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LoginPage.css';
+import styles from './LoginPage.module.css';
 import Logo from '../../components/ui/Logo/Logo';
 import LoginForm from './LoginForm/LoginForm';
 
@@ -20,11 +20,11 @@ export default function LoginPage() {
     };
 
     return (
-        <main className="container">
+        <main className={styles.container}>
             <Logo />
-            <h2 className="welcome-title">Bienvenue chez nous !</h2>
-            <hr className="break-hr" />
-            <h3 className="login-title">Connectez-vous</h3>
+            <h2 className={styles.welcomeTitle}>Bienvenue chez nous !</h2>
+            <hr className={styles.breakHr} />
+            <h3 className={styles.loginTitle}>Connectez-vous</h3>
             <LoginForm
                 onSubmit={handleSubmit}
                 onChange={handleChange}
