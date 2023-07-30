@@ -21,31 +21,31 @@
 }
 
 .welcome-title {
-    color: #fff;
+    color: var(--white);
     text-align: center;
     font-family: Amatic SC;
-    font-size: 48px;
+    font-size: var(--P5);
     font-style: normal;
-    font-weight: 700;
+    font-weight: var(--bold);
     line-height: 61px;
-    margin-bottom: 32px;
+    margin-bottom: var(--lg);
 }
 
 .break-hr {
     width: 400px;
     height: 3px;
-    background: #f56a2c;
-    border: 1px solid #f56a2c;
-    margin-bottom: 32px;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    margin-bottom: var(--lg);
 }
 
 .login-title {
-    color: #fff;
+    color: var(--white);
     text-align: center;
     font-family: Amatic SC;
-    font-size: 36px;
+    font-size: var(--P4);
     font-style: normal;
-    font-weight: 700;
+    font-weight: var(--bold);
     line-height: 46px;
-    margin-bottom: 18px;
+    margin-bottom: var(--md);
 }

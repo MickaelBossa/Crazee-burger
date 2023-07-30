@@ -1,7 +1,7 @@
 .login-btn-container {
     width: 400px;
-    height: 55px;
-    background-color: #ff9f1b;
+    height: var(--xl);
+    background-color: var(--primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,12 +11,12 @@
 
 .login-btn-container button {
     border: none;
-    background-color: #ff9f1b;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--white);
     text-align: center;
     font-family: Arial;
-    font-size: 15px;
+    font-size: var(--P0);
     font-style: normal;
-    font-weight: 700;
+    font-weight: var(--bold);
     line-height: 15px;
 }

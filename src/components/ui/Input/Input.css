@@ -1,25 +1,25 @@
 .login-input-container {
     width: 400px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: var(--white);
     display: flex;
     align-items: center;
-    height: 55px;
-    margin-bottom: 15px;
-    gap: 15px;
+    height: var(--xl);
+    margin-bottom: var(--md);
+    gap: var(--sm);
 }
 
 .login-input-container input {
     border: none;
     width: 100%;
-    margin-right: 24px;
+    margin-right: var(--md);
 }
 
 .login-input-container input::placeholder {
-    color: #d3d3d3;
+    color: var(--greyLight);
     font-family: Arial;
-    font-size: 15px;
+    font-size: var(--P0);
     font-style: normal;
-    font-weight: 400;
+    font-weight: var(--regular);
     line-height: 17px;
 }
