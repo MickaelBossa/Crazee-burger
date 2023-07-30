@@ -1,0 +1,22 @@
+.login-btn-container {
+    width: 400px;
+    height: 55px;
+    background-color: #ff9f1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.login-btn-container button {
+    border: none;
+    background-color: #ff9f1b;
+    color: #fff;
+    text-align: center;
+    font-family: Arial;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+}

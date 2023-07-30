@@ -1,0 +1,20 @@
+.logo-title {
+    font-size: 2rem;
+    display: flex;
+    color: #ff9400;
+    justify-content: center;
+    align-items: center;
+    font-family: Amatic SC;
+    font-size: 110px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 115px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 72px;
+}
+
+.logo-img {
+    width: 200px;
+    height: 150px;
+}

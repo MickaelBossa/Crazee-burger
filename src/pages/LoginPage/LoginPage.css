@@ -20,27 +20,6 @@
     }
 }
 
-.logo-title {
-    font-size: 2rem;
-    display: flex;
-    color: #ff9400;
-    justify-content: center;
-    align-items: center;
-    font-family: Amatic SC;
-    font-size: 110px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 115px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 72px;
-}
-
-.logo-img {
-    width: 200px;
-    height: 150px;
-}
-
 .welcome-title {
     color: #fff;
     text-align: center;
@@ -69,62 +48,4 @@
     font-weight: 700;
     line-height: 46px;
     margin-bottom: 18px;
-}
-
-.login-input-container {
-    width: 400px;
-    margin: 0 auto;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    height: 55px;
-    margin-bottom: 15px;
-    gap: 15px;
-}
-
-.login-input-container input {
-    border: none;
-    width: 100%;
-    margin-right: 24px;
-}
-
-.login-input-container input::placeholder {
-    color: #d3d3d3;
-    font-family: Arial;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 17px;
-}
-
-.person-icon {
-    color: #d3d3d3;
-    margin-left: 24px;
-}
-
-.login-btn-container {
-    width: 400px;
-    height: 55px;
-    background-color: #ff9f1b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    cursor: pointer;
-}
-
-.login-btn-container button {
-    border: none;
-    background-color: #ff9f1b;
-    color: #fff;
-    text-align: center;
-    font-family: Arial;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 15px;
-}
-
-.chevron-icon {
-    color: #fff;
 }
