@@ -10,10 +10,33 @@
     width: 1400px;
     background-color: purple;
     margin: 0 auto;
+    padding: 0px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
+    border-radius: var(--extraRound) var(--extraRound) 0 0;
+}
+
+.rightSideContainer {
+    background-color: yellow;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.heyUserAndBtn {
+    margin-right: 10px;
+}
+
+.logOutBtn {
+    text-decoration: none;
+}
+
+.personIcon {
+    width: 36px;
+    height: 36px;
+    color: var(--greyBlue);
 }
 
 .mainContent {
@@ -21,4 +44,5 @@
     width: 1400px;
     margin: 0 auto;
     flex: 1;
+    border-radius: 0 0 var(--extraRound) var(--extraRound);
 }
