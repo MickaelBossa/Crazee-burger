@@ -1,11 +1,11 @@
 import styles from './Logo.module.css';
 
-export default function Logo() {
+export default function Logo({ className }) {
     return (
-        <h1 className={styles.logoTitle}>
+        <h1 className={`${className} ${styles.logoTitle}`}>
             Crazee{' '}
             <img
-                src="logo-orange.png"
+                src="/logo-orange.png"
                 alt="Logo Crazee Burger"
                 className={styles.logoImg}
             />{' '}
