@@ -8,11 +8,16 @@ export default function OrderPage() {
 
     return (
         <div className={styles.container}>
-            <nav>
+            <nav className={styles.navBar}>
                 <Logo />
-                <h1>Hey, {params.username}</h1>
-                <button onClick={() => navigate('/')}>Déconnexion</button>
+                <div>
+                    <h1>Hey, {params.username}</h1>
+                    <button onClick={() => navigate('/')}>Déconnexion</button>
+                </div>
             </nav>
+            <main className={styles.mainContent}>
+                main
+            </main>
         </div>
     );
 }
