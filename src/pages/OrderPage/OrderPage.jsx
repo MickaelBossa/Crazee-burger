@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import Logo from '../../components/ui/Logo/Logo'
+import Logo from '../../components/ui/Logo/Logo';
 import { Link } from 'react-router-dom';
 import { BsPersonCircle } from 'react-icons/bs';
 
@@ -14,15 +14,20 @@ export default function OrderPage() {
                 <Logo onClick={() => window.location.reload()} />
                 <div className={styles.rightSideContainer}>
                     <div className={styles.heyUserAndBtn}>
-                        <h1>Hey, {params.username}</h1>
-                        <Link to={'/'} className={styles.logOutBtn}>Déconnexion</Link>
+                        <p>
+                            Hey,{' '}
+                            <spans className={styles.username}>
+                                {params.username}
+                            </spans>
+                        </p>
+                        <Link to={'/'} className={styles.logOutBtn}>
+                            Déconnexion
+                        </Link>
                     </div>
                     <BsPersonCircle className={styles.personIcon} />
                 </div>
             </nav>
-            <main className={styles.mainContent}>
-                main
-            </main>
+            <main className={styles.mainContent}></main>
         </div>
     );
 }
