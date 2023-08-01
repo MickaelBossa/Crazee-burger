@@ -11,7 +11,7 @@ export default function OrderPage() {
     return (
         <div className={styles.container}>
             <nav className={styles.navBar}>
-                <Logo />
+                <Logo onClick={() => window.location.reload()} />
                 <div className={styles.rightSideContainer}>
                     <div className={styles.heyUserAndBtn}>
                         <h1>Hey, {params.username}</h1>
