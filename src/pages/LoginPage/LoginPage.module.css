@@ -6,7 +6,7 @@
 
     ::before {
         content: '';
-        background: url('burger-background.jpg');
+        background: url('/burger-background.jpg');
         background-position: center;
         background-size: cover;
         background-blend-mode: darken;
