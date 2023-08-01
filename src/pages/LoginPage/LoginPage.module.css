@@ -20,6 +20,17 @@
     }
 }
 
+.logoLoginPage {
+    margin-bottom: 72px;
+    font-size: 110px !important;
+    line-height: 115px !important;
+}
+
+.logoLoginPage img {
+    width: 200px;
+    height: 150px;
+}
+
 .welcomeTitle {
     color: var(--white);
     text-align: center;

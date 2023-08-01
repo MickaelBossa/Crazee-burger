@@ -1,0 +1,11 @@
+.navBar {
+    width: 1400px;
+    background-color: var(--white);
+    margin: 0 auto;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    border-radius: var(--extraRound) var(--extraRound) 0 0;
+}

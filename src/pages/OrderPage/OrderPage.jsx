@@ -1,13 +1,15 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
+import styles from './OrderPage.module.css';
+import NavBar from './NavBar/NavBar';
 
 export default function OrderPage() {
     const params = useParams();
-    const navigate = useNavigate();
 
     return (
-        <div>
-            <h1>Bonjour {params.username}</h1>
-            <button onClick={() => navigate('/')}>Déconnexion</button>
+        <div className={styles.container}>
+            <NavBar params={params} />
+            <main className={styles.mainContent}></main>
         </div>
     );
 }

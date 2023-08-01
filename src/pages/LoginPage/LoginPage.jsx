@@ -21,7 +21,7 @@ export default function LoginPage() {
 
     return (
         <main className={styles.container}>
-            <Logo />
+            <Logo className={styles.logoLoginPage} />
             <h2 className={styles.welcomeTitle}>Bienvenue chez nous !</h2>
             <hr className={styles.breakHr} />
             <h3 className={styles.loginTitle}>Connectez-vous</h3>
