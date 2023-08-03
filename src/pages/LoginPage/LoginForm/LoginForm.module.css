@@ -3,6 +3,11 @@
     margin-left: var(--md);
 }
 
+.primaryBtnContainer {
+    display: flex;
+    justify-content: center;
+}
+
 .chevronIcon {
     color: var(--white);
 }
