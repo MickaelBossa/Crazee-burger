@@ -1,5 +1,4 @@
 .container {
-    width: 400px;
     height: var(--xl);
     background-color: var(--primary);
     display: flex;
