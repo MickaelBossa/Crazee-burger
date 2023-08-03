@@ -13,6 +13,7 @@ export default function LoginForm({ onSubmit, onChange, userName }) {
             />
             <PrimaryButton
                 Icon={<BsChevronRight className={styles.chevronIcon} />}
+                label={'Accédez à mon espace'}
             />
         </form>
     );
