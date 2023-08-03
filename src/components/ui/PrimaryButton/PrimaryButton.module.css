@@ -10,6 +10,16 @@
     border-radius: var(--round);
 }
 
+.container:hover {
+    border: 1px solid var(--primary);
+}
+
+.container:hover,
+.container:hover > * {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
 .container button {
     border: none;
     background-color: var(--primary);
@@ -20,4 +30,5 @@
     font-style: normal;
     font-weight: var(--bold);
     line-height: 15px;
+    cursor: pointer;
 }

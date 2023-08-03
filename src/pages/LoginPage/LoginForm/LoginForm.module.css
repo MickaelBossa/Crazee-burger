@@ -6,3 +6,7 @@
 .chevronIcon {
     color: var(--white);
 }
+
+.chevronIcon :hover {
+    color: var(--primary)
+}
