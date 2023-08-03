@@ -23,6 +23,9 @@
     font-size: var(--P4);
     font-weight: var(--bold);
     font-family: 'Amatic SC';
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .priceAndBtnContainer {
