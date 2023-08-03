@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { fakeMenu2 } from '../../../fakeData/fakeMenu';
+import { fakeMenu2 } from '../../fakeData/fakeMenu';
 import styles from './OrderPage.module.css';
 import NavBar from './NavBar/NavBar';
 import ProductCard from '../../components/ui/ProductCard/ProductCard';
