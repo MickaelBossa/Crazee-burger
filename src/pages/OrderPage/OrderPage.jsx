@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-
+import { fakeMenu2 } from '../../../fakeData/fakeMenu';
 import styles from './OrderPage.module.css';
 import NavBar from './NavBar/NavBar';
 
@@ -9,7 +9,13 @@ export default function OrderPage() {
     return (
         <div className={styles.container}>
             <NavBar params={params} />
-            <main className={styles.mainContent}></main>
+            <main className={styles.mainContent}>
+                {fakeMenu2.map((product) => (
+                    <div key={product.id} className={styles.productCard}>
+                    
+                    </div>
+                ))}
+            </main>
         </div>
     );
 }
