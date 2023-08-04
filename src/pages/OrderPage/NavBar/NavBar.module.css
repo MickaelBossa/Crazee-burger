@@ -1,5 +1,6 @@
 .navBar {
-    width: 1400px;
+    max-width: 1400px;
+    width: 100%;
     background-color: var(--white);
     margin: 0 auto;
     padding: 0px 20px;

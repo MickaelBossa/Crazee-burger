@@ -1,13 +1,33 @@
 .container {
-    width: 400px;
     height: var(--xl);
     background-color: var(--primary);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
     cursor: pointer;
     border-radius: var(--round);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
+    transition-delay: 0.2s;
+    border: 1px solid transparent;
+}
+
+.container:hover {
+    border-color: var(--primary);
+}
+
+.container:hover,
+.container:hover > * {
+    background-color: var(--white);
+    color: var(--primary);
+    transition-delay: 0;
+}
+
+.container:active,
+.container:active > * {
+    background-color: var(--primary);
+    color: var(--white);
+    transition-delay: 0s;
 }
 
 .container button {
@@ -20,4 +40,7 @@
     font-style: normal;
     font-weight: var(--bold);
     line-height: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transition-delay: 0.2s;
 }

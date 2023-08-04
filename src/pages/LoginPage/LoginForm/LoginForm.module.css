@@ -3,6 +3,23 @@
     margin-left: var(--md);
 }
 
+.primaryBtnContainer {
+    display: flex;
+    justify-content: center;
+}
+
 .chevronIcon {
+    color: var(--white);
+    transition: background-color 0.3s ease-in-out, color 0.3s out,
+        border-color 0.3s out;
+    transition-delay: 0.27s;
+}
+
+.chevronIcon:hover {
+    color: var(--primary);
+}
+
+.chevronIcon:active {
+    background-color: var(--primary);
     color: var(--white);
 }
