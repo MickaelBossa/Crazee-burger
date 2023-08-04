@@ -1,15 +1,9 @@
 .toggleBtnContainer {
-    /* border: 1px solid red; */
-
     display: flex;
     margin-right: 10px;
 }
 
-.toggleBtnInput.toggleStyle {
-    display: none;
-}
-
-.toggleBtnInput.toggleStyle + label {
+.toggleBtnInput + label {
     display: inline-block;
     height: 40px;
     width: 200px;
@@ -25,7 +19,7 @@
 }
 
 /* the small round circle */
-.toggleBtnInput.toggleStyle + label:before {
+.toggleBtnInput + label:before {
     content: '';
     position: absolute;
     top: 3px;
@@ -36,8 +30,7 @@
 }
 
 /* text inside the switch button (for checked and unchecked) */
-.toggleBtnInput.toggleStyle + label:after {
-    /* border: 1px solid blue; */
+.toggleBtnInput + label:after {
     width: 150px;
     text-align: center;
     z-index: 2;
@@ -50,22 +43,21 @@
 }
 
 /* outside box */
-.toggleBtnInput.toggleStyle + label.rounded {
+.toggleBtnInput + label {
     border-radius: 30px;
 }
 
 /* small circle */
-.toggleBtnInput.toggleStyle + label.rounded:before {
+.toggleBtnInput + label:before {
     border-radius: 50%;
 }
 
-.toggleBtnInput.toggleStyle:not(:checked) + label {
+.toggleBtnInput:not(:checked) + label {
     background-color: var(--background_dark);
-    /* text-align: right; */
 }
 
 /* text label when not checked */
-.toggleBtnInput.toggleStyle:not(:checked) + label:after {
+.toggleBtnInput:not(:checked) + label:after {
     content: attr(data-unchecked);
     right: 8px;
     left: auto;
@@ -75,19 +67,19 @@
 }
 
 /* small circle when not checked */
-.toggleBtnInput.toggleStyle:not(:checked) + label:before {
+.toggleBtnInput:not(:checked) + label:before {
     left: 3px;
     background-color: var(--primary);
 }
 
 /* box container when checked */
-.toggleBtnInput.toggleStyle:checked + label {
+.toggleBtnInput:checked + label {
     text-align: left;
     border-color: var(--primary);
 }
 
 /* label text when checked */
-.toggleBtnInput.toggleStyle:checked + label:after {
+.toggleBtnInput:checked + label:after {
     content: attr(data-checked);
     left: 9px;
     right: auto;
@@ -97,7 +89,7 @@
 }
 
 /* small circle when checked */
-.toggleBtnInput.toggleStyle:checked + label:before {
+.toggleBtnInput:checked + label:before {
     left: 162px;
     background-color: var(--primary);
 }
