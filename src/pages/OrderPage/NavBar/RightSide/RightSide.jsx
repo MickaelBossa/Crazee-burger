@@ -4,7 +4,6 @@ import HeyUserAndLogOut from './HeyUserAndLogOut/HeyUserAndLogOut';
 import { ToastContainer, toast } from 'react-toastify';
 import ToggleButton from '../../../../components/ui/ToggleButton/ToggleButton';
 import { useState } from 'react';
-import { FaUserSecret } from 'react-icons/fa';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function RightSide({ params }) {
@@ -15,7 +14,6 @@ export default function RightSide({ params }) {
 
         !toggleBtnIsChecked &&
             toast.info('Mode admin activé', {
-                icon: <FaUserSecret size={30} />,
                 theme: 'dark',
                 position: 'bottom-right',
                 autoClose: 5000,
