@@ -22,3 +22,18 @@
     justify-items: center;
     overflow-y: scroll;
 }
+
+.adminPanel {
+    position: absolute;
+    bottom: 25px;
+    max-width: 1400px;
+    width: 100%;
+    background-color: red;
+    height: 250px;
+}
+
+.adminPanelBtn {
+    position: relative;
+    bottom: 20px;
+    left: 71px;
+}
