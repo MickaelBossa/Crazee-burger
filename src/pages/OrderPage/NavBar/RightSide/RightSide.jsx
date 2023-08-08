@@ -1,7 +1,7 @@
 import { BsPersonCircle } from 'react-icons/bs';
 import styles from './RightSide.module.css';
 import HeyUserAndLogOut from './HeyUserAndLogOut/HeyUserAndLogOut';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import ToggleButton from '../../../../components/ui/ToggleButton/ToggleButton';
 import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,13 +27,10 @@ export default function RightSide({ params }) {
 
     return (
         <div className={styles.rightSideContainer}>
-            <div className={styles.toasterContainer}>
-                <ToggleButton
-                    isChecked={toggleBtnIsChecked}
-                    onToggle={toggleHandler}
-                />
-                <ToastContainer className={styles.toaster} />
-            </div>
+            <ToggleButton
+                isChecked={toggleBtnIsChecked}
+                onToggle={toggleHandler}
+            />
             <HeyUserAndLogOut params={params} />
             <BsPersonCircle className={styles.personIcon} />
         </div>
