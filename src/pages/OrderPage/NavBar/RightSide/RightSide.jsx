@@ -3,16 +3,15 @@ import styles from './RightSide.module.css';
 import HeyUserAndLogOut from './HeyUserAndLogOut/HeyUserAndLogOut';
 import { toast } from 'react-toastify';
 import ToggleButton from '../../../../components/ui/ToggleButton/ToggleButton';
-import { useState } from 'react';
+import { useContext } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
+import { AdminContext } from '../../OrderPage';
 
-export default function RightSide({ params }) {
-    const [toggleBtnIsChecked, setToggleBtnIsChecked] = useState(false);
+export default function RightSide({ params, toggleAdminMode }) {
+    const isAdmin = useContext(AdminContext);
 
     const toggleHandler = () => {
-        setToggleBtnIsChecked(!toggleBtnIsChecked);
-
-        !toggleBtnIsChecked &&
+        !isAdmin &&
             toast.info('Mode admin activé', {
                 theme: 'dark',
                 position: 'bottom-right',
@@ -23,14 +22,13 @@ export default function RightSide({ params }) {
                 draggable: true,
                 progress: undefined,
             });
+
+        toggleAdminMode();
     };
 
     return (
         <div className={styles.rightSideContainer}>
-            <ToggleButton
-                isChecked={toggleBtnIsChecked}
-                onToggle={toggleHandler}
-            />
+            <ToggleButton isChecked={isAdmin} onToggle={toggleHandler} />
             <HeyUserAndLogOut params={params} />
             <BsPersonCircle className={styles.personIcon} />
         </div>
