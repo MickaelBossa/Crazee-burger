@@ -6,7 +6,7 @@ export default function HeyUserAndLogOut({ params }) {
         <div className={styles.heyUserAndBtn}>
             <p>
                 Hey,{' '}
-                <spans className={styles.username}>{params.username}</spans>
+                <span className={styles.username}>{params.username}</span>
             </p>
             <Link to={'/'} className={styles.logOutBtn}>
                 Déconnexion
