@@ -1,0 +1,94 @@
+.toggleBtnContainer {
+    display: flex;
+}
+
+.toggleBtnInput + label {
+    display: inline-block;
+    height: 40px;
+    width: 200px;
+    position: relative;
+    font-size: var(--XXS);
+    letter-spacing: 0.5px;
+    border: 2px solid var(--background_dark);
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+}
+
+/* the small round circle */
+.toggleBtnInput + label:before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    height: 30px;
+    width: 30px;
+    transition: all 500ms ease;
+    z-index: 3;
+}
+
+/* text inside the switch button (for checked and unchecked) */
+.toggleBtnInput + label:after {
+    width: 150px;
+    text-align: center;
+    z-index: 2;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* outside box */
+.toggleBtnInput + label {
+    border-radius: 30px;
+}
+
+/* small circle */
+.toggleBtnInput + label:before {
+    border-radius: 50%;
+}
+
+.toggleBtnInput:not(:checked) + label {
+    background-color: var(--background_dark);
+}
+
+/* text label when not checked */
+.toggleBtnInput:not(:checked) + label:after {
+    content: attr(data-unchecked);
+    right: 8px;
+    left: auto;
+    opacity: 1;
+    color: var(--primary);
+    font-weight: var(--bold);
+}
+
+/* small circle when not checked */
+.toggleBtnInput:not(:checked) + label:before {
+    left: 3px;
+    background-color: var(--primary);
+}
+
+/* box container when checked */
+.toggleBtnInput:checked + label {
+    text-align: left;
+    border-color: var(--primary);
+}
+
+/* label text when checked */
+.toggleBtnInput:checked + label:after {
+    content: attr(data-checked);
+    left: 9px;
+    right: auto;
+    opacity: 1;
+    color: var(--dark);
+    letter-spacing: 0px;
+}
+
+/* small circle when checked */
+.toggleBtnInput:checked + label:before {
+    left: 162px;
+    background-color: var(--primary);
+}
