@@ -27,7 +27,8 @@
     --XXXS: 8px;
     --XXS: 10px;
     --XS: 12px;
-    --P0: 15px;
+    --SM: 15px;
+    --P0: 16px;
     --P1: 18px;
     --P2: 20px;
     --P3: 24px;
@@ -46,4 +47,4 @@
     --semiBold: 600;
     --bold: 700;
     --heavy: 800;
-  }
+}
