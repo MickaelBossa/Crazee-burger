@@ -14,17 +14,12 @@ export const AdminContext = createContext(null);
 export default function OrderPage() {
     const [isAdmin, setIsAdmin] = useState(false);
     const [isAdminPanelVisible, setIsAdminPanelVisible] = useState(isAdmin);
+    const [activeTab, setActiveTab] = useState(0);
 
     const params = useParams();
 
     const toggleAdminMode = () => {
         setIsAdmin(!isAdmin);
-    };
-
-    const conditionalStyles = {
-        adminPanelHeight: {
-            height: isAdminPanelVisible && '0px',
-        },
     };
 
     return (
@@ -38,7 +33,9 @@ export default function OrderPage() {
                     {isAdmin && (
                         <div
                             className={styles.adminPanel}
-                            style={conditionalStyles.adminPanelHeight}
+                            style={{
+                                height: isAdminPanelVisible ? '0px' : '250px',
+                            }}
                         >
                             <button
                                 className={styles.adminPanelBtn}
@@ -52,14 +49,31 @@ export default function OrderPage() {
                                     <FiChevronDown />
                                 )}
                             </button>
-                            <button className={styles.adminPanelBtn}>
+                            <button
+                                className={styles.adminPanelBtn}
+                                style={{
+                                    backgroundColor: activeTab === 0 && 'blue',
+                                }}
+                                onClick={() => setActiveTab(0)}
+                            >
                                 <AiOutlinePlus />
                                 Ajouter un produit
                             </button>
-                            <button className={styles.adminPanelBtn}>
+                            <button
+                                className={styles.adminPanelBtn}
+                                style={{
+                                    backgroundColor: activeTab === 1 && 'blue',
+                                }}
+                                onClick={() => setActiveTab(1)}
+                            >
                                 <MdModeEditOutline />
                                 Modifier un produit
                             </button>
+                            {activeTab === 0 ? (
+                                <p>Ajouter un produit</p>
+                            ) : (
+                                <p>Modifier un produit</p>
+                            )}
                         </div>
                     )}
                 </main>
