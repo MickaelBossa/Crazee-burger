@@ -39,41 +39,59 @@ export default function OrderPage() {
                         >
                             <button
                                 className={styles.adminPanelBtn}
+                                style={{
+                                    width: '62px',
+                                    backgroundColor:
+                                        isAdminPanelVisible && '#292729',
+                                }}
                                 onClick={() =>
                                     setIsAdminPanelVisible(!isAdminPanelVisible)
                                 }
                             >
                                 {isAdminPanelVisible ? (
-                                    <FiChevronUp />
+                                    <FiChevronUp width={16} />
                                 ) : (
-                                    <FiChevronDown />
+                                    <FiChevronDown width={16} />
                                 )}
                             </button>
+
                             <button
                                 className={styles.adminPanelBtn}
                                 style={{
-                                    backgroundColor: activeTab === 0 && 'blue',
+                                    backgroundColor:
+                                        activeTab === 0 && '#292729',
+                                    color: activeTab === 0 && '#FFFFFF',
+                                    border: activeTab === 0 && 'none',
                                 }}
                                 onClick={() => setActiveTab(0)}
                             >
-                                <AiOutlinePlus />
+                                <AiOutlinePlus width={16} />
                                 Ajouter un produit
                             </button>
+
                             <button
                                 className={styles.adminPanelBtn}
                                 style={{
-                                    backgroundColor: activeTab === 1 && 'blue',
+                                    backgroundColor:
+                                        activeTab === 1 && '#292729',
+                                    color: activeTab === 1 && '#FFFFFF',
+                                    border: activeTab === 1 && 'none',
                                 }}
                                 onClick={() => setActiveTab(1)}
                             >
-                                <MdModeEditOutline />
+                                <MdModeEditOutline width={16} />
                                 Modifier un produit
                             </button>
-                            {activeTab === 0 ? (
-                                <p>Ajouter un produit</p>
-                            ) : (
-                                <p>Modifier un produit</p>
-                            )}
+                            <p
+                                className={styles.adminPanelTxt}
+                                style={{
+                                    display: isAdminPanelVisible && 'none',
+                                }}
+                            >
+                                {activeTab === 0
+                                    ? 'Ajouter un produit'
+                                    : 'Modifier un produit'}
+                            </p>
                         </div>
                     )}
                 </main>
