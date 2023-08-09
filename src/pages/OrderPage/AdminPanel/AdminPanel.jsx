@@ -1,5 +1,5 @@
 import styles from './AdminPanel.module.css';
-import ButtonContainer from './ButtonContainer/ButtonContainer';
+import TabContainer from './ButtonContainer/TabContainer';
 
 export default function AdminPanel({
     toggleActiveTab,
@@ -14,7 +14,7 @@ export default function AdminPanel({
                 height: isAdminPanelVisible ? '250px' : '0px',
             }}
         >
-            <ButtonContainer
+            <TabContainer
                 isAdminPanelVisible={isAdminPanelVisible}
                 toggleAdminPanelVisibility={toggleAdminPanelVisibility}
                 toggleActiveTab={toggleActiveTab}

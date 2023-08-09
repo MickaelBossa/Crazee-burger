@@ -1,6 +1,6 @@
-import styles from './AdminPanelBtn.module.css';
+import styles from './AdminPanelTab.module.css';
 
-export default function AdminPanelBtn({
+export default function AdminPanelTab({
     index,
     icon,
     txt,

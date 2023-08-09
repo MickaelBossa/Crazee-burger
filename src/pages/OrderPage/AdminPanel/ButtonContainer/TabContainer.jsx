@@ -1,9 +1,9 @@
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { MdModeEditOutline } from 'react-icons/md';
-import AdminPanelBtn from './AdminPanelBtn/AdminPanelBtn';
+import AdminPanelTab from './AdminPanelTab/AdminPanelTab';
 
-export default function ButtonContainer({
+export default function TabContainer({
     isAdminPanelVisible,
     toggleAdminPanelVisibility,
     toggleActiveTab,
@@ -11,7 +11,7 @@ export default function ButtonContainer({
 }) {
     return (
         <>
-            <AdminPanelBtn
+            <AdminPanelTab
                 icon={
                     isAdminPanelVisible ? (
                         <FiChevronDown width={16} />
@@ -23,14 +23,14 @@ export default function ButtonContainer({
                 toggleActiveTab={toggleAdminPanelVisibility}
                 isAdminPanelVisible={isAdminPanelVisible}
             />
-            <AdminPanelBtn
+            <AdminPanelTab
                 index={0}
                 icon={<AiOutlinePlus width={16} />}
                 txt={'Ajouter un produit'}
                 activeTab={activeTab}
                 toggleActiveTab={() => toggleActiveTab(0)}
             />
-            <AdminPanelBtn
+            <AdminPanelTab
                 index={1}
                 icon={<MdModeEditOutline width={16} />}
                 txt={'Modifier un produit'}
