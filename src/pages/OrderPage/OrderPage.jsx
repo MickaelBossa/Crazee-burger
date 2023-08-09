@@ -12,7 +12,7 @@ export const AdminContext = createContext(null);
 export default function OrderPage() {
     const [isAdmin, setIsAdmin] = useState(false);
 
-    const [isAdminPanelVisible, setIsAdminPanelVisible] = useState(isAdmin);
+    const [isAdminPanelVisible, setIsAdminPanelVisible] = useState(true);
     const [activeTab, setActiveTab] = useState(0);
 
     const params = useParams();
@@ -23,9 +23,9 @@ export default function OrderPage() {
 
     const toggleActiveTab = (nbr) => {
         if (isAdminPanelVisible) {
-            setIsAdminPanelVisible(!isAdminPanelVisible);
             setActiveTab(nbr);
         } else {
+            setIsAdminPanelVisible(!isAdminPanelVisible);
             setActiveTab(nbr);
         }
     };

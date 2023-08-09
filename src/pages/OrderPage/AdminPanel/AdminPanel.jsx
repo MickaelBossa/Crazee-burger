@@ -13,20 +13,20 @@ export default function AdminPanel({
         <div
             className={styles.adminPanel}
             style={{
-                height: isAdminPanelVisible ? '0px' : '250px',
+                height: isAdminPanelVisible ? '250px' : '0px',
             }}
         >
             <button
                 className={styles.adminPanelBtn}
                 style={{
                     width: '62px',
-                    backgroundColor: isAdminPanelVisible && '#292729',
-                    borderTop : isAdminPanelVisible && 'none',
-                    borderBottom : isAdminPanelVisible && 'none',
+                    backgroundColor: !isAdminPanelVisible && '#292729',
+                    borderTop : !isAdminPanelVisible && 'none',
+                    borderBottom : !isAdminPanelVisible && 'none',
                 }}
                 onClick={toggleAdminPanelVisibility}
             >
-                {!isAdminPanelVisible ? (
+                {isAdminPanelVisible ? (
                     <FiChevronDown width={16} />
                 ) : (
                     <FiChevronUp width={16} />
@@ -61,7 +61,7 @@ export default function AdminPanel({
             <p
                 className={styles.adminPanelTxt}
                 style={{
-                    display: isAdminPanelVisible && 'none',
+                    display: !isAdminPanelVisible && 'none',
                 }}
             >
                 {activeTab === 0 ? 'Ajouter un produit' : 'Modifier un produit'}
