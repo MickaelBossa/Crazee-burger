@@ -1,5 +1,6 @@
 import styles from './AdminPanel.module.css';
 import TabContainer from './TabContainer/TabContainer';
+import { tabsConfig } from './tabsConfig';
 
 export default function AdminPanel({
     toggleActiveTab,
@@ -7,6 +8,8 @@ export default function AdminPanel({
     activeTab,
     isAdminPanelVisible,
 }) {
+    const tabs = tabsConfig;
+
     return (
         <div
             className={styles.adminPanel}
@@ -26,7 +29,7 @@ export default function AdminPanel({
                     display: !isAdminPanelVisible && 'none',
                 }}
             >
-                {activeTab === 0 ? 'Ajouter un produit' : 'Modifier un produit'}
+                {tabs.find((tab) => tab.index === activeTab).txt}
             </p>
         </div>
     );

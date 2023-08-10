@@ -1,7 +1,6 @@
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import { AiOutlinePlus } from 'react-icons/ai';
-import { MdModeEditOutline } from 'react-icons/md';
 import AdminPanelTab from './AdminPanelTab/AdminPanelTab';
+import { tabsConfig } from '../tabsConfig';
 
 export default function TabContainer({
     isAdminPanelVisible,
@@ -9,6 +8,8 @@ export default function TabContainer({
     toggleActiveTab,
     activeTab,
 }) {
+    const tabs = tabsConfig;
+
     return (
         <>
             <AdminPanelTab
@@ -23,20 +24,16 @@ export default function TabContainer({
                 toggleActiveTab={toggleAdminPanelVisibility}
                 isAdminPanelVisible={isAdminPanelVisible}
             />
-            <AdminPanelTab
-                index={0}
-                icon={<AiOutlinePlus width={16} />}
-                txt={'Ajouter un produit'}
-                activeTab={activeTab}
-                toggleActiveTab={() => toggleActiveTab(0)}
-            />
-            <AdminPanelTab
-                index={1}
-                icon={<MdModeEditOutline width={16} />}
-                txt={'Modifier un produit'}
-                activeTab={activeTab}
-                toggleActiveTab={() => toggleActiveTab(1)}
-            />
+            {tabs.map((tab) => (
+                <AdminPanelTab
+                    key={tab.index}
+                    index={tab.index}
+                    icon={tab.icon}
+                    txt={tab.txt}
+                    activeTab={activeTab}
+                    toggleActiveTab={() => toggleActiveTab(tab.index)}
+                />
+            ))}
         </>
     );
 }

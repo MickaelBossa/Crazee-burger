@@ -12,7 +12,7 @@ export default function AdminPanelTab({
         <button
             className={styles.adminPanelBtn}
             style={
-                index === 0 || index === 1
+                txt
                     ? {
                           backgroundColor: activeTab === index && '#292729',
                           color: activeTab === index && '#FFFFFF',
