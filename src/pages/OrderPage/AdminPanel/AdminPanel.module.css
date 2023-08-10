@@ -1,0 +1,21 @@
+.adminPanel {
+    position: absolute;
+    bottom: 25px;
+    max-width: 1400px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    box-shadow: var(--subtleShadow);
+}
+
+.adminPanelTxt {
+    background-color: var(--white);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-left: 21px;
+    padding-top: 17px;
+}

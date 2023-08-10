@@ -1,0 +1,23 @@
+.adminPanelBtn {
+    position: relative;
+    bottom: 43px;
+    left: 71px;
+    color: var(--greySemiDark);
+    background-color: var(--white);
+    border: 1px solid var(--greyLight);
+    border-radius: 5px 5px 0px 0px;
+    height: 43px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: var(--XS);
+    cursor: pointer;
+}
+
+.adminPanelBtn:hover {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
