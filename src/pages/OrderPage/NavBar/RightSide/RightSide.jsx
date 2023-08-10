@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import ToggleButton from '../../../../components/ui/ToggleButton/ToggleButton';
 import { useContext } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-import { AdminContext } from '../../OrderPage';
+import AdminContext from '../../../../context/AdminContext';
 
 export default function RightSide({ params, toggleAdminMode }) {
     const isAdmin = useContext(AdminContext);

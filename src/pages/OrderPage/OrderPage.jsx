@@ -3,11 +3,9 @@ import { fakeMenu2 } from '../../fakeData/fakeMenu';
 import styles from './OrderPage.module.css';
 import NavBar from './NavBar/NavBar';
 import ProductCard from '../../components/ui/ProductCard/ProductCard';
-import { createContext } from 'react';
 import { useState } from 'react';
 import AdminPanel from './AdminPanel/AdminPanel';
-
-export const AdminContext = createContext(null);
+import AdminContext from '../../context/AdminContext';
 
 export default function OrderPage() {
     const [isAdmin, setIsAdmin] = useState(false);
