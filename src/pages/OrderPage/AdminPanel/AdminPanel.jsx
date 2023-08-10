@@ -1,5 +1,5 @@
 import styles from './AdminPanel.module.css';
-import TabContainer from './ButtonContainer/TabContainer';
+import TabContainer from './TabContainer/TabContainer';
 
 export default function AdminPanel({
     toggleActiveTab,
