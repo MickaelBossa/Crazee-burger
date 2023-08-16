@@ -38,7 +38,11 @@ export default function OrderPage() {
                 <NavBar params={params} toggleAdminMode={toggleAdminMode} />
                 <main className={styles.mainContent}>
                     {fakeMenu.LARGE.map((product) => (
-                        <ProductCard key={product.id} product={product} />
+                        <ProductCard
+                            key={product.id}
+                            product={product}
+                            isAdmin={isAdmin}
+                        />
                     ))}
                     {isAdmin && (
                         <AdminPanel
