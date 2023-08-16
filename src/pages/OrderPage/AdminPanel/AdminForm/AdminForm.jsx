@@ -5,8 +5,8 @@ import styles from './AdminForm.module.css';
 
 export default function AdminForm({ addProduct }) {
     const [productTitle, setProductTitle] = useState('');
-    const [productImageSource, setProductImageSource] = useState(null);
-    const [productPrice, setProductPrice] = useState(null);
+    const [productImageSource, setProductImageSource] = useState('');
+    const [productPrice, setProductPrice] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,6 +24,9 @@ export default function AdminForm({ addProduct }) {
         };
 
         addProduct(newProduct);
+        setProductTitle('');
+        setProductImageSource('');
+        setProductPrice('');
     };
 
     return (
