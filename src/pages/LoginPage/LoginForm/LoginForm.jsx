@@ -12,6 +12,7 @@ export default function LoginForm({ onSubmit, onChange, userName }) {
                 value={userName}
                 backgroundColor={'var(--white)'}
                 placeholder="Entrez votre prénom"
+                required={true}
             />
             <div className={styles.primaryBtnContainer}>
                 <PrimaryButton

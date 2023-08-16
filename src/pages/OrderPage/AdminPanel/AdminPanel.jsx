@@ -40,9 +40,6 @@ export default function AdminPanel({
                         <p>Aucune image</p>
                     </div>
                     <div className={styles.adminPanelRightSide}>
-                        {/* <input type="text" />
-                        <input type="text" />
-                        <input type="text" /> */}
                         <Input
                             Icon={
                                 <FaHamburger
@@ -56,6 +53,7 @@ export default function AdminPanel({
                             height="35px"
                             changePlaceHolderColor={true}
                             width="645px"
+                            required={false}
                         />
                         <Input
                             Icon={
@@ -70,6 +68,7 @@ export default function AdminPanel({
                             height="35px"
                             changePlaceHolderColor={true}
                             width="645px"
+                            required={false}
                         />
                         <Input
                             Icon={
@@ -84,6 +83,7 @@ export default function AdminPanel({
                             height="35px"
                             changePlaceHolderColor={true}
                             width="645px"
+                            required={false}
                         />
                         <PrimaryButton
                             label={'Ajouter un nouveau produit au menu'}

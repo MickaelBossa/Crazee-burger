@@ -1,6 +1,6 @@
 import styles from './Input.module.css';
 
-export default function Input({Icon, onChange, value, backgroundColor, placeholder, height, changePlaceHolderColor, width}) {
+export default function Input({Icon, onChange, value, backgroundColor, placeholder, height, changePlaceHolderColor, width, required}) {
 
   const customContainerStyle = {
     backgroundColor: backgroundColor,
@@ -17,7 +17,7 @@ export default function Input({Icon, onChange, value, backgroundColor, placehold
         {Icon && Icon}
         <input
             type="text"
-            required
+            required={required}
             placeholder={placeholder}
             value={value}
             onChange={(e) => onChange(e)}
