@@ -1,0 +1,7 @@
+.adminPanelRightSide input {
+    display: block;
+}
+
+::placeholder {
+    color: green;
+}
