@@ -3,7 +3,14 @@ import { BsFillCameraFill } from 'react-icons/bs';
 import { MdOutlineEuro } from 'react-icons/md';
 import Input from '../../../../../../components/ui/Input/Input';
 
-export default function ProductInputs() {
+export default function ProductInputs({
+    productTitle,
+    setProductTitle,
+    productImageSource,
+    setProductImageSource,
+    productPrice,
+    setProductPrice,
+}) {
     return (
         <>
             <Input
@@ -20,6 +27,8 @@ export default function ProductInputs() {
                 changePlaceHolderColor={true}
                 width="645px"
                 required={false}
+                onChange={(e) => setProductTitle(e.target.value)}
+                value={productTitle}
             />
             <Input
                 Icon={
@@ -35,6 +44,8 @@ export default function ProductInputs() {
                 changePlaceHolderColor={true}
                 width="645px"
                 required={false}
+                onChange={(e) => setProductImageSource(e.target.value)}
+                value={productImageSource}
             />
             <Input
                 Icon={
@@ -50,6 +61,8 @@ export default function ProductInputs() {
                 changePlaceHolderColor={true}
                 width="645px"
                 required={false}
+                onChange={(e) => setProductPrice(e.target.value)}
+                value={productPrice}
             />
         </>
     );

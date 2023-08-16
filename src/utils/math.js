@@ -1,3 +1,3 @@
 export const formatPrice = (price) => {
-    return Number.parseFloat(price).toFixed(2);
-}
+    return Number.parseFloat(price.toString().replace(/,/g, '.')).toFixed(2);
+};
