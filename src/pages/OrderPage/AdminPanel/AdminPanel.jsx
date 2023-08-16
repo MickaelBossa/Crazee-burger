@@ -8,6 +8,7 @@ export default function AdminPanel({
     toggleAdminPanelVisibility,
     activeTab,
     isAdminPanelVisible,
+    addProduct,
 }) {
     // const tabs = tabsConfig;
 
@@ -31,7 +32,7 @@ export default function AdminPanel({
                 }}
             >
                 {/* {tabs.find((tab) => tab.index === activeTab).txt} */}
-                <AdminForm />
+                <AdminForm addProduct={addProduct} />
             </div>
         </div>
     );

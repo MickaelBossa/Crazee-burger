@@ -39,6 +39,11 @@ export default function OrderPage() {
         setProducts(newProducts);
     };
 
+    const addProduct = (newProduct) => {
+        const newProducts = [...products, newProduct];
+        setProducts(newProducts);
+    }
+
     return (
         <AdminContext.Provider value={isAdmin}>
             <div className={styles.container}>
@@ -83,6 +88,7 @@ export default function OrderPage() {
                             }
                             activeTab={activeTab}
                             isAdminPanelVisible={isAdminPanelVisible}
+                            addProduct={addProduct}
                         />
                     )}
                 </main>

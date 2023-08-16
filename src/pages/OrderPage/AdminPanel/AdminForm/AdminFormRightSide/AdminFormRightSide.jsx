@@ -12,6 +12,7 @@ export default function AdminFormRightSide() {
                 width={'275px'}
                 fontSize={'var(--XS)'}
                 primary={false}
+                
             />
         </div>
     );
