@@ -28,6 +28,7 @@ export default function ProductCard({ product, isAdmin, deleteProduct }) {
                     width={'95px'}
                     label={'Ajouter'}
                     height={'38px'}
+                    primary={true}
                 />
             </div>
         </div>
