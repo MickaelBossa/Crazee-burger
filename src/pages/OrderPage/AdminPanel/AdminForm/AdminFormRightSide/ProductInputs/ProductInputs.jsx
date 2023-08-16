@@ -46,6 +46,7 @@ export default function ProductInputs({
                 required={false}
                 onChange={(e) => setProductImageSource(e.target.value)}
                 value={productImageSource}
+                type="url"
             />
             <Input
                 Icon={
