@@ -3,11 +3,11 @@ import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import styles from './ProductCard.module.css';
 import { TiDelete } from 'react-icons/ti';
 
-export default function ProductCard({ product, isAdmin }) {
+export default function ProductCard({ product, isAdmin, deleteProduct }) {
     return (
         <div className={styles.productCard}>
             {isAdmin && (
-                <div className={styles.deleteIconContainer}>
+                <div className={styles.deleteIconContainer} onClick={deleteProduct}>
                     <TiDelete className={styles.deleteIcon} />
                 </div>
             )}
