@@ -1,11 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { fakeMenu } from '../../fakeData/fakeMenu';
-import styles from './OrderPage.module.css';
 import NavBar from './NavBar/NavBar';
 import ProductCard from '../../components/ui/ProductCard/ProductCard';
 import { useState } from 'react';
 import AdminPanel from './AdminPanel/AdminPanel';
 import AdminContext from '../../context/AdminContext';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FiCheck } from 'react-icons/fi';
+import styles from './OrderPage.module.css';
 
 export default function OrderPage() {
     const [products, setProducts] = useState(fakeMenu.LARGE);
@@ -42,7 +45,32 @@ export default function OrderPage() {
     const addProduct = (newProduct) => {
         const newProducts = [...products, newProduct];
         setProducts(newProducts);
-    }
+        toast.success('Ajouté avec succès !', {
+            icon: (
+                <FiCheck
+                    width={18}
+                    style={{
+                        border: '1px solid #60BD4F',
+                        borderRadius: '50%',
+                        color: '#60BD4F',
+                    }}
+                />
+            ),
+            position: 'bottom-right',
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            closeButton: false,
+            style: {
+                position: 'relative',
+                left: '-510px',
+                top: '-10px',
+                boxShadow: '10px 5px 5px #FFFFFF',
+                color: '#60BD4F'
+            }
+        });
+    };
 
     return (
         <AdminContext.Provider value={isAdmin}>
