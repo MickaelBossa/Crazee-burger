@@ -1,7 +1,6 @@
-import AdminForm from './AdminForm/AdminForm';
-import styles from './AdminPanel.module.css';
 import TabContainer from './TabContainer/TabContainer';
-// import { tabsConfig } from './tabsConfig';
+import { tabsConfig } from './tabsConfig';
+import styles from './AdminPanel.module.css';
 
 export default function AdminPanel({
     toggleActiveTab,
@@ -10,7 +9,7 @@ export default function AdminPanel({
     isAdminPanelVisible,
     addProduct,
 }) {
-    // const tabs = tabsConfig;
+    const tabs = tabsConfig(addProduct);
 
     return (
         <div
@@ -31,8 +30,7 @@ export default function AdminPanel({
                     display: !isAdminPanelVisible && 'none',
                 }}
             >
-                {/* {tabs.find((tab) => tab.index === activeTab).txt} */}
-                <AdminForm addProduct={addProduct} />
+                {tabs.find((tab) => tab.index === activeTab).Component}
             </div>
         </div>
     );
