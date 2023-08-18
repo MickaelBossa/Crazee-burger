@@ -7,6 +7,7 @@ export default function PrimaryButton({
     height,
     fontSize,
     primary,
+    onClick,
 }) {
     const customPrimaryButtonStyle = {
         width: width || '400px',
@@ -26,7 +27,7 @@ export default function PrimaryButton({
             className={`${styles.defaultContainer} ${buttonContainerClass}`}
             style={customPrimaryButtonStyle}
         >
-            <button style={customBtnTagStyle} type="submit">
+            <button onClick={onClick} style={customBtnTagStyle} type="submit">
                 {label}
             </button>
             {Icon && Icon}

@@ -22,3 +22,26 @@
     justify-items: center;
     overflow-y: scroll;
 }
+
+.adminMessage {
+    color: var(--greyBlue);
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: var(--P4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 31px;
+}
+
+.adminMessageTitle {
+    font-weight: var(--bold);
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.adminMessageSubtitle {
+    font-weight: var(--regular);
+}

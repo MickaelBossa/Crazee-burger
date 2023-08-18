@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FiCheck } from 'react-icons/fi';
 import styles from './OrderPage.module.css';
+import PrimaryButton from '../../components/ui/PrimaryButton/PrimaryButton';
 
 export default function OrderPage() {
     const [products, setProducts] = useState(fakeMenu.LARGE);
@@ -67,8 +68,8 @@ export default function OrderPage() {
                 left: '-510px',
                 top: '-10px',
                 boxShadow: '10px 5px 5px #FFFFFF',
-                color: '#60BD4F'
-            }
+                color: '#60BD4F',
+            },
         });
     };
 
@@ -87,16 +88,24 @@ export default function OrderPage() {
                     ))}
                     {products.length === 0 ? (
                         isAdmin ? (
-                            <div>
-                                <p>
-                                    Le menu est vide ? Cliquez ci dessous pour
-                                    le réinitialiser
+                            <div className={styles.adminMessage}>
+                                <p className={styles.adminMessageTitle}>
+                                    Le menu est vide ?{' '}
+                                    <span
+                                        className={styles.adminMessageSubtitle}
+                                    >
+                                        Cliquez ci dessous pour le réinitialiser
+                                    </span>
                                 </p>
-                                <button
+
+                                <PrimaryButton
+                                    height="50px"
+                                    label="Générer de nouveaux produits"
+                                    width="224px"
+                                    primary={true}
+                                    fontSize="12px"
                                     onClick={() => setProducts(fakeMenu.LARGE)}
-                                >
-                                    Générer de nouveaux produits
-                                </button>
+                                />
                             </div>
                         ) : (
                             <div>
