@@ -4,38 +4,41 @@ import { v4 as uuidv4 } from 'uuid';
 import styles from './AdminForm.module.css';
 
 export default function AdminForm({ addProduct }) {
-    const [productTitle, setProductTitle] = useState('');
-    const [productImageSource, setProductImageSource] = useState('');
-    const [productPrice, setProductPrice] = useState('');
+    const [newProduct, setNewProduct] = useState({
+        id: '',
+        title: '',
+        imageSource: '',
+        price: '',
+    });
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newProduct = {
+        const newProductToAdd = {
             id: uuidv4(),
-            title: productTitle,
-            imageSource: productImageSource
-                ? productImageSource
+            title: newProduct.title,
+            imageSource: newProduct.imageSource
+                ? newProduct.imageSource
                 : '/images/coming-soon.png',
-            price: productPrice ? productPrice : '0,00',
-            quantity: 0,
-            isAvailable: true,
-            isAdvertised: false,
+            price: newProduct.price ? newProduct.price : '0,00',
         };
 
-        addProduct(newProduct);
-        setProductTitle('');
-        setProductImageSource('');
-        setProductPrice('');
+        addProduct(newProductToAdd);
+        setNewProduct({
+            id: '',
+            title: '',
+            imageSource: '',
+            price: '',
+        });
     };
 
     return (
         <form className={styles.adminPanelForm} onSubmit={handleSubmit}>
             <div className={styles.adminPanelLeftSide}>
-                {productImageSource ? (
+                {newProduct.imageSource ? (
                     <img
-                        src={productImageSource}
-                        alt={productTitle}
+                        src={newProduct.imageSource}
+                        alt={newProduct.title}
                         className={styles.previewProduct}
                     />
                 ) : (
@@ -43,12 +46,8 @@ export default function AdminForm({ addProduct }) {
                 )}
             </div>
             <AdminFormRightSide
-                productTitle={productTitle}
-                setProductTitle={setProductTitle}
-                productImageSource={productImageSource}
-                setProductImageSource={setProductImageSource}
-                productPrice={productPrice}
-                setProductPrice={setProductPrice}
+                newProduct={newProduct}
+                setNewProduct={setNewProduct}
             />
         </form>
     );

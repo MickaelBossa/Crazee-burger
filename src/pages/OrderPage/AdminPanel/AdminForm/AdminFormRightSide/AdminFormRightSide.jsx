@@ -2,15 +2,13 @@ import PrimaryButton from '../../../../../components/ui/PrimaryButton/PrimaryBut
 import styles from './AdminFormRightSide.module.css';
 import ProductInputs from './ProductInputs/ProductInputs';
 
-export default function AdminFormRightSide({productTitle, setProductTitle, productImageSource, setProductImageSource, productPrice, setProductPrice}) {
+export default function AdminFormRightSide({ newProduct, setNewProduct }) {
     return (
         <div className={styles.adminPanelRightSide}>
-            <ProductInputs                 productTitle={productTitle}
-                setProductTitle={setProductTitle}
-                productImageSource={productImageSource}
-                setProductImageSource={setProductImageSource}
-                productPrice={productPrice}
-                setProductPrice={setProductPrice} />
+            <ProductInputs
+                newProduct={newProduct}
+                setNewProduct={setNewProduct}
+            />
             <PrimaryButton
                 label={'Ajouter un nouveau produit au menu'}
                 height={'34px'}

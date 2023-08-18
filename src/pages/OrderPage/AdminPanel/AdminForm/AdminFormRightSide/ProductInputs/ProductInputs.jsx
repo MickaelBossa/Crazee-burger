@@ -1,22 +1,8 @@
 import Input from '../../../../../../components/ui/Input/Input';
 import { PRODUCTS_CONFIG } from './productsConfig';
 
-export default function ProductInputs({
-    productTitle,
-    setProductTitle,
-    productImageSource,
-    setProductImageSource,
-    productPrice,
-    setProductPrice,
-}) {
-    const productsConfig = PRODUCTS_CONFIG(
-        productTitle,
-        setProductTitle,
-        productImageSource,
-        setProductImageSource,
-        productPrice,
-        setProductPrice,
-    );
+export default function ProductInputs({ newProduct, setNewProduct }) {
+    const productsConfig = PRODUCTS_CONFIG(newProduct, setNewProduct);
 
     return (
         <>
@@ -28,6 +14,7 @@ export default function ProductInputs({
                     onChange={product.onChange}
                     value={product.value}
                     type={product.type}
+                    name={product.name}
                     backgroundColor={'var(--background_white)'}
                     height="35px"
                     changePlaceHolderColor={true}

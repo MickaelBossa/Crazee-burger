@@ -2,14 +2,7 @@ import { FaHamburger } from 'react-icons/fa';
 import { BsFillCameraFill } from 'react-icons/bs';
 import { MdOutlineEuro } from 'react-icons/md';
 
-export const PRODUCTS_CONFIG = (
-    productTitle,
-    setProductTitle,
-    productImageSource,
-    setProductImageSource,
-    productPrice,
-    setProductPrice,
-) => [
+export const PRODUCTS_CONFIG = (newProduct, setNewProduct) => [
     {
         id: 0,
         Icon: (
@@ -20,8 +13,9 @@ export const PRODUCTS_CONFIG = (
             />
         ),
         placeholder: 'Nom du produit (ex: Super Burger)',
-        onChange: (e) => setProductTitle(e.target.value),
-        value: productTitle,
+        onChange: (e) =>
+            setNewProduct({ ...newProduct, title: e.target.value }),
+        value: newProduct.title,
         type: 'text',
     },
     {
@@ -35,8 +29,9 @@ export const PRODUCTS_CONFIG = (
         ),
         placeholder:
             "Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)",
-        onChange: (e) => setProductImageSource(e.target.value),
-        value: productImageSource,
+        onChange: (e) =>
+            setNewProduct({ ...newProduct, imageSource: e.target.value }),
+        value: newProduct.imageSource,
         type: 'url',
     },
     {
@@ -49,8 +44,9 @@ export const PRODUCTS_CONFIG = (
             />
         ),
         placeholder: 'Prix',
-        onChange: (e) => setProductPrice(e.target.value),
-        value: productPrice,
+        onChange: (e) =>
+            setNewProduct({ ...newProduct, price: e.target.value }),
+        value: newProduct.price,
         type: 'text',
     },
 ];
