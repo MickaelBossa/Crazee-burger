@@ -32,7 +32,15 @@ export default function AdminForm({ addProduct }) {
     return (
         <form className={styles.adminPanelForm} onSubmit={handleSubmit}>
             <div className={styles.adminPanelLeftSide}>
-                <p>Aucune image</p>
+                {productImageSource ? (
+                    <img
+                        src={productImageSource}
+                        alt={productTitle}
+                        className={styles.previewProduct}
+                    />
+                ) : (
+                    <p>Aucune image</p>
+                )}
             </div>
             <AdminFormRightSide
                 productTitle={productTitle}

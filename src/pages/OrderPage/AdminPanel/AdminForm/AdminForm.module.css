@@ -3,8 +3,12 @@
 }
 
 .adminPanelLeftSide {
-    padding-left: 50px;
+    margin-left: 50px;
     margin-right: 20px;
+    height: calc(199px - 54px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .adminPanelLeftSide p {
@@ -16,4 +20,9 @@
     font-size: var(--P0);
     font-weight: var(--regular);
     line-height: var(--P3);
+}
+
+.previewProduct {
+    width: 100px;
+    height: 100px;
 }
