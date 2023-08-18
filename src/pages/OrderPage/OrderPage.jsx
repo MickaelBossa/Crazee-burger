@@ -5,11 +5,9 @@ import ProductCard from '../../components/ui/ProductCard/ProductCard';
 import { useState } from 'react';
 import AdminPanel from './AdminPanel/AdminPanel';
 import AdminContext from '../../context/AdminContext';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FiCheck } from 'react-icons/fi';
+import OutOfStockMsg from './OutOfStockMsg/OutOfStockMsg';
 import styles from './OrderPage.module.css';
-import PrimaryButton from '../../components/ui/PrimaryButton/PrimaryButton';
 
 export default function OrderPage() {
     const [products, setProducts] = useState(fakeMenu.LARGE);
@@ -18,6 +16,8 @@ export default function OrderPage() {
 
     const [isAdminPanelVisible, setIsAdminPanelVisible] = useState(true);
     const [activeTab, setActiveTab] = useState(0);
+
+    const [hasProductAdded, setHasProductAdded] = useState(false);
 
     const params = useParams();
 
@@ -46,31 +46,10 @@ export default function OrderPage() {
     const addProduct = (newProduct) => {
         const newProducts = [newProduct, ...products];
         setProducts(newProducts);
-        toast.success('Ajouté avec succès !', {
-            icon: (
-                <FiCheck
-                    width={18}
-                    style={{
-                        border: '1px solid #60BD4F',
-                        borderRadius: '50%',
-                        color: '#60BD4F',
-                    }}
-                />
-            ),
-            position: 'bottom-right',
-            autoClose: 2000,
-            hideProgressBar: true,
-            closeOnClick: false,
-            pauseOnHover: false,
-            closeButton: false,
-            style: {
-                position: 'relative',
-                left: '-510px',
-                top: '-10px',
-                boxShadow: '10px 5px 5px #FFFFFF',
-                color: '#60BD4F',
-            },
-        });
+        setHasProductAdded(true);
+        setTimeout(() => {
+            setHasProductAdded(false);
+        }, '2000');
     };
 
     return (
@@ -87,35 +66,10 @@ export default function OrderPage() {
                         />
                     ))}
                     {products.length === 0 ? (
-                        isAdmin ? (
-                            <div className={styles.adminMessage}>
-                                <p className={styles.adminMessageTitle}>
-                                    Le menu est vide ?{' '}
-                                    <span
-                                        className={styles.adminMessageSubtitle}
-                                    >
-                                        Cliquez ci dessous pour le réinitialiser
-                                    </span>
-                                </p>
-
-                                <PrimaryButton
-                                    height="50px"
-                                    label="Générer de nouveaux produits"
-                                    width="224px"
-                                    primary={true}
-                                    fontSize="12px"
-                                    onClick={() => setProducts(fakeMenu.LARGE)}
-                                />
-                            </div>
-                        ) : (
-                            <div>
-                                <p>
-                                    Victime de notre succès ! :D De nouvelles
-                                    recettes sont en cours de préparation.. A
-                                    très vite !
-                                </p>
-                            </div>
-                        )
+                        <OutOfStockMsg
+                            isAdmin={isAdmin}
+                            setProducts={setProducts}
+                        />
                     ) : null}
                     {isAdmin && (
                         <AdminPanel
@@ -126,6 +80,7 @@ export default function OrderPage() {
                             activeTab={activeTab}
                             isAdminPanelVisible={isAdminPanelVisible}
                             addProduct={addProduct}
+                            hasProductAdded={hasProductAdded}
                         />
                     )}
                 </main>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './AdminForm.module.css';
 
-export default function AdminForm({ addProduct }) {
+export default function AdminForm({ addProduct, hasProductAdded }) {
     const [newProduct, setNewProduct] = useState({
         id: '',
         title: '',
@@ -48,6 +48,7 @@ export default function AdminForm({ addProduct }) {
             <AdminFormRightSide
                 newProduct={newProduct}
                 setNewProduct={setNewProduct}
+                hasProductAdded={hasProductAdded}
             />
         </form>
     );
