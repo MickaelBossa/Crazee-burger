@@ -43,7 +43,7 @@ export default function OrderPage() {
     };
 
     const addProduct = (newProduct) => {
-        const newProducts = [...products, newProduct];
+        const newProducts = [newProduct, ...products];
         setProducts(newProducts);
         toast.success('Ajouté avec succès !', {
             icon: (
