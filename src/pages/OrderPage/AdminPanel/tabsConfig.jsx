@@ -1,6 +1,7 @@
 import { AiOutlinePlus } from 'react-icons/ai';
 import { MdModeEditOutline } from 'react-icons/md';
 import AdminForm from './AdminForm/AdminForm';
+import AdminUpdateForm from './AdminUpdateForm/AdminUpdateForm';
 
 export const tabsConfig = (addProduct, hasProductAdded) => [
     {
@@ -13,6 +14,6 @@ export const tabsConfig = (addProduct, hasProductAdded) => [
         index: 1,
         Icon: <MdModeEditOutline width={16} />,
         txt:'Modifier un produit',
-        Component: 'Modifier un produit',
+        Component: <AdminUpdateForm />,
     },
 ];
