@@ -1,4 +1,4 @@
-.container {
+.defaultContainer {
     height: var(--xl);
     background-color: var(--primary);
     display: flex;
@@ -12,25 +12,37 @@
     border: 1px solid transparent;
 }
 
-.container:hover {
+.primaryButtonContainer:hover {
     border-color: var(--primary);
 }
 
-.container:hover,
-.container:hover > * {
+.primaryButtonContainer:hover,
+.primaryButtonContainer:hover > * {
     background-color: var(--white);
     color: var(--primary);
     transition-delay: 0;
 }
 
-.container:active,
-.container:active > * {
+.primaryButtonContainer:active,
+.primaryButtonContainer:active > * {
     background-color: var(--primary);
     color: var(--white);
     transition-delay: 0s;
 }
 
-.container button {
+.secondaryButtonContainer,
+.secondaryButtonContainer > * {
+    background-color: #60bd4f !important;
+}
+
+.secondaryButtonContainer:hover,
+.secondaryButtonContainer:hover > * {
+    color: #60bd4f;
+    border-color: #60bd4f;
+    background-color: var(--white) !important;
+}
+
+.defaultContainer button {
     border: none;
     background-color: var(--primary);
     color: var(--white);

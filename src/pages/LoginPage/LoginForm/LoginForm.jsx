@@ -9,12 +9,16 @@ export default function LoginForm({ onSubmit, onChange, userName }) {
             <Input
                 Icon={<BsPersonCircle className={styles.personIcon} />}
                 onChange={onChange}
-                userName={userName}
+                value={userName}
+                backgroundColor={'var(--white)'}
+                placeholder="Entrez votre prénom"
+                required={true}
             />
             <div className={styles.primaryBtnContainer}>
                 <PrimaryButton
                     Icon={<BsChevronRight className={styles.chevronIcon} />}
                     label={'Accédez à mon espace'}
+                    primary={true}
                 />
             </div>
         </form>

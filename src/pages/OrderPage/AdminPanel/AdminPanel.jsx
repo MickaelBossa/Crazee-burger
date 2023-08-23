@@ -1,14 +1,16 @@
-import styles from './AdminPanel.module.css';
 import TabContainer from './TabContainer/TabContainer';
 import { tabsConfig } from './tabsConfig';
+import styles from './AdminPanel.module.css';
 
 export default function AdminPanel({
     toggleActiveTab,
     toggleAdminPanelVisibility,
     activeTab,
     isAdminPanelVisible,
+    addProduct,
+    hasProductAdded
 }) {
-    const tabs = tabsConfig;
+    const tabs = tabsConfig(addProduct, hasProductAdded);
 
     return (
         <div
@@ -23,14 +25,14 @@ export default function AdminPanel({
                 toggleActiveTab={toggleActiveTab}
                 activeTab={activeTab}
             />
-            <p
+            <div
                 className={styles.adminPanelTxt}
                 style={{
                     display: !isAdminPanelVisible && 'none',
                 }}
             >
-                {tabs.find((tab) => tab.index === activeTab).txt}
-            </p>
+                {tabs.find((tab) => tab.index === activeTab).Component}
+            </div>
         </div>
     );
 }

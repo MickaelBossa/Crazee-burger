@@ -8,7 +8,7 @@ export default function TabContainer({
     toggleActiveTab,
     activeTab,
 }) {
-    const tabs = tabsConfig;
+    const tabs = tabsConfig();
 
     return (
         <>
@@ -28,7 +28,7 @@ export default function TabContainer({
                 <AdminPanelTab
                     key={tab.index}
                     index={tab.index}
-                    icon={tab.icon}
+                    icon={tab.Icon}
                     txt={tab.txt}
                     activeTab={activeTab}
                     toggleActiveTab={() => toggleActiveTab(tab.index)}

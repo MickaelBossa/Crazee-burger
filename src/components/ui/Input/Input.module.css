@@ -1,7 +1,6 @@
 .container {
     width: 400px;
     margin: 0 auto;
-    background-color: var(--white);
     display: flex;
     align-items: center;
     height: var(--xl);
@@ -23,4 +22,8 @@
     font-style: normal;
     font-weight: var(--regular);
     line-height: 17px;
+}
+
+.inputTag::placeholder {
+    color: var(--greyMedium)!important;
 }
