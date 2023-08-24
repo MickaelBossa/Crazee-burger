@@ -63,6 +63,7 @@ export default function OrderPage() {
                             product={product}
                             isAdmin={isAdmin}
                             deleteProduct={() => deleteProduct(product.id)}
+                            activeEditMode={toggleActiveTab}
                         />
                     ))}
                     {products.length === 0 ? (

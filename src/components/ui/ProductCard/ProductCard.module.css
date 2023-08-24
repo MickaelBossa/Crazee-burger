@@ -12,6 +12,31 @@
     box-shadow: -3px 8px 20px 0px rgba(255, 160, 27, 0.7);
 }
 
+.hoverableCard:active {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.hoverableCard:active .productPrice {
+    color: var(--white);
+}
+
+.hoverableCard:active .activeCardStyle {
+    background-color: var(--white);
+    color: var(--primary);
+    transition: none;
+}
+.hoverableCard:active .activeCardStyle button {
+    background-color: var(--white);
+    color: var(--primary);
+    transition: none;
+}
+
+.hoverableCard:active .activeCardDeleteBtnStyle {
+    color: var(--white);
+    transition: none;
+}
+
 .imgContainer {
     width: 200px;
     height: 145px;
