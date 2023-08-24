@@ -4,8 +4,11 @@ import styles from './ProductCard.module.css';
 import { TiDelete } from 'react-icons/ti';
 
 export default function ProductCard({ product, isAdmin, deleteProduct }) {
+
+    const hoverableCardStyle = isAdmin && styles.hoverableCard
+
     return (
-        <div className={styles.productCard}>
+        <div className={`${styles.productCard} ${hoverableCardStyle}`}>
             {isAdmin && (
                 <div className={styles.deleteIconContainer} onClick={deleteProduct}>
                     <TiDelete className={styles.deleteIcon} />
