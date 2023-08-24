@@ -1,13 +1,16 @@
-import { HiCursorClick } from 'react-icons/hi';
+import AdminUpdateFormMsg from './AdminUpdateFormMsg/AdminUpdateFormMsg';
 import styles from './AdminUpdateForm.module.css';
 
 export default function AdminUpdateForm() {
+    const test = true;
+
     return (
-        <div className={styles.updateContainer}>
-            <p className={styles.updateTxt}>
-                Cliquez sur un produit pour le modifier
-            </p>
-            <HiCursorClick className={styles.updateIcon} />
-        </div>
+        <>
+            {test ? (
+                <AdminUpdateFormMsg />
+            ) : (
+                <p className={styles.test}>Hello world</p>
+            )}
+        </>
     );
 }
