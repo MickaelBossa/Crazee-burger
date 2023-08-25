@@ -7,6 +7,7 @@ import AdminPanel from './AdminPanel/AdminPanel';
 import AdminContext from '../../context/AdminContext';
 import 'react-toastify/dist/ReactToastify.css';
 import OutOfStockMsg from './OutOfStockMsg/OutOfStockMsg';
+import { EMPTY_PRODUCT } from '../../enums/product';
 import styles from './OrderPage.module.css';
 
 export default function OrderPage() {
@@ -18,6 +19,8 @@ export default function OrderPage() {
     const [activeTab, setActiveTab] = useState(0);
 
     const [hasProductAdded, setHasProductAdded] = useState(false);
+
+    const [productToModify, setProductToModify] = useState(EMPTY_PRODUCT);
 
     const params = useParams();
 
@@ -52,6 +55,25 @@ export default function OrderPage() {
         }, '2000');
     };
 
+    const onAdminClicked = (product) => {
+        if (isAdminPanelVisible) {
+            setActiveTab(1);
+        } else {
+            setIsAdminPanelVisible(!isAdminPanelVisible);
+            setActiveTab(1);
+        }
+        setProductToModify(product);
+    };
+
+    const updateProduct = (productBeingModified) => {
+        const indexOfProductBeingModified = products.findIndex(
+            (product) => product.id === productBeingModified.id,
+        );
+        const productsCopy = [...products];
+        productsCopy[indexOfProductBeingModified] = productBeingModified;
+        setProducts(productsCopy);
+    };
+
     return (
         <AdminContext.Provider value={isAdmin}>
             <div className={styles.container}>
@@ -63,7 +85,7 @@ export default function OrderPage() {
                             product={product}
                             isAdmin={isAdmin}
                             deleteProduct={() => deleteProduct(product.id)}
-                            activeEditMode={toggleActiveTab}
+                            activeEditMode={onAdminClicked}
                         />
                     ))}
                     {products.length === 0 ? (
@@ -82,6 +104,9 @@ export default function OrderPage() {
                             isAdminPanelVisible={isAdminPanelVisible}
                             addProduct={addProduct}
                             hasProductAdded={hasProductAdded}
+                            productToModify={productToModify}
+                            updateProduct={updateProduct}
+                            setProductToModify={setProductToModify}
                         />
                     )}
                 </main>

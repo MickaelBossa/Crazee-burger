@@ -1,15 +1,11 @@
 import AdminFormRightSide from './AdminFormRightSide/AdminFormRightSide';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { EMPTY_PRODUCT } from '../../../../enums/product';
 import styles from './AdminForm.module.css';
 
 export default function AdminForm({ addProduct, hasProductAdded }) {
-    const [newProduct, setNewProduct] = useState({
-        id: '',
-        title: '',
-        imageSource: '',
-        price: '',
-    });
+    const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT);
 
     const handleSubmit = (e) => {
         e.preventDefault();

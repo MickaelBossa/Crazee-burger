@@ -14,7 +14,7 @@ export default function ProductCard({
     return (
         <div
             className={`${styles.productCard} ${hoverableCardStyle}`}
-            onClick={isAdmin ? () => activeEditMode(1) : () => {}}
+            onClick={isAdmin ? () => activeEditMode(product) : () => {}}
         >
             {isAdmin && (
                 <div

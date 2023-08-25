@@ -8,9 +8,18 @@ export default function AdminPanel({
     activeTab,
     isAdminPanelVisible,
     addProduct,
-    hasProductAdded
+    hasProductAdded,
+    productToModify,
+    updateProduct,
+    setProductToModify,
 }) {
-    const tabs = tabsConfig(addProduct, hasProductAdded);
+    const tabs = tabsConfig(
+        addProduct,
+        hasProductAdded,
+        productToModify,
+        updateProduct,
+        setProductToModify,
+    );
 
     return (
         <div
