@@ -11,6 +11,7 @@ export default function Input({
     width,
     required,
     type,
+    name,
 }) {
     const customContainerStyle = {
         backgroundColor: backgroundColor,
@@ -33,6 +34,7 @@ export default function Input({
                 onChange={(e) => onChange(e)}
                 style={customInputStyle}
                 className={changePlaceHolderColor && styles.inputTag}
+                name={name}
             />
         </div>
     );
