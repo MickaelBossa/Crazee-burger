@@ -1,23 +1,9 @@
-.adminPanelForm {
-    display: flex;
+.infoMsg {
+    color: var(--primary);
+    font-family: Open Sans;
+    font-size: var(--PO);
 }
 
-.adminPanelLeftSide {
-    margin-left: 50px;
-    margin-right: 20px;
-    height: calc(199px - 54px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.adminPanelRightSide input {
-    display: block;
-}
-
-.previewProduct {
-    width: 100px;
-    height: 100px;
-    margin: 48px 58px;
-    object-fit: contain;
+.inRealTime {
+    text-decoration: underline;
 }

@@ -1,6 +1,6 @@
 import { AiOutlinePlus } from 'react-icons/ai';
 import { MdModeEditOutline } from 'react-icons/md';
-import AdminForm from './AdminForm/AdminForm';
+import AdminAddForm from './AdminAddForm/AdminAddForm';
 import AdminUpdateForm from './AdminUpdateForm/AdminUpdateForm';
 
 export const tabsConfig = (
@@ -9,14 +9,14 @@ export const tabsConfig = (
     productToModify,
     updateProduct,
     setProductToModify,
-    titleInputRef
+    titleInputRef,
 ) => [
     {
         index: 0,
         Icon: <AiOutlinePlus width={16} />,
         txt: 'Ajouter un produit',
         Component: (
-            <AdminForm
+            <AdminAddForm
                 addProduct={addProduct}
                 hasProductAdded={hasProductAdded}
             />

@@ -1,13 +1,8 @@
-import Input from '../../../../../../components/ui/Input/Input';
+import Input from '../../Input/Input';
 import { PRODUCTS_CONFIG } from './productsConfig';
 
-export default function ProductInputs({ newProduct, setNewProduct }) {
+export default function ProductInputs({ newProduct, onChange, titleInputRef }) {
     const productsConfig = PRODUCTS_CONFIG(newProduct);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setNewProduct({ ...newProduct, [name]: value });
-    };
 
     return (
         <>
@@ -16,7 +11,7 @@ export default function ProductInputs({ newProduct, setNewProduct }) {
                     key={product.id}
                     Icon={product.Icon}
                     placeholder={product.placeholder}
-                    onChange={handleChange}
+                    onChange={onChange}
                     value={product.value}
                     type={product.type}
                     name={product.name}
@@ -25,6 +20,7 @@ export default function ProductInputs({ newProduct, setNewProduct }) {
                     changePlaceHolderColor={true}
                     width="645px"
                     required={false}
+                    ref={titleInputRef}
                 />
             ))}
         </>

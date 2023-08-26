@@ -34,12 +34,16 @@ const Input = forwardRef(function Input(
                 type={type ? type : 'text'}
                 required={required}
                 placeholder={placeholder}
-                value={value}
+                value={
+                    value !== '/images/coming-soon.png' && value !== '0,00'
+                        ? value
+                        : ''
+                }
                 onChange={(e) => onChange(e)}
                 style={customInputStyle}
                 className={changePlaceHolderColor && styles.inputTag}
                 name={name}
-                ref={ref && ref}
+                ref={ref && name === 'title' ? ref : null}
             />
         </div>
     );
