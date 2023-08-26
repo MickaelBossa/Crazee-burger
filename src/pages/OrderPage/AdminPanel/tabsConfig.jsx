@@ -9,6 +9,7 @@ export const tabsConfig = (
     productToModify,
     updateProduct,
     setProductToModify,
+    titleInputRef
 ) => [
     {
         index: 0,
@@ -30,6 +31,7 @@ export const tabsConfig = (
                 productToModify={productToModify}
                 updateProduct={updateProduct}
                 setProductToModify={setProductToModify}
+                titleInputRef={titleInputRef}
             />
         ),
     },

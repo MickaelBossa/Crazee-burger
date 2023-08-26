@@ -10,6 +10,7 @@ export default function AdminUpdateForm({
     productToModify,
     updateProduct,
     setProductToModify,
+    titleInputRef
 }) {
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -51,6 +52,7 @@ export default function AdminUpdateForm({
                             width="645px"
                             required={false}
                             name="title"
+                            ref={titleInputRef}
                         />
 
                         <Input

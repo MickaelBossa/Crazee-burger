@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { fakeMenu } from '../../fakeData/fakeMenu';
 import NavBar from './NavBar/NavBar';
 import ProductCard from '../../components/ui/ProductCard/ProductCard';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import AdminPanel from './AdminPanel/AdminPanel';
 import AdminContext from '../../context/AdminContext';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,6 +17,8 @@ export default function OrderPage() {
     const [activeTab, setActiveTab] = useState(0);
     const [hasProductAdded, setHasProductAdded] = useState(false);
     const [productToModify, setProductToModify] = useState(EMPTY_PRODUCT);
+
+    const titleInputRef = useRef();
 
     const params = useParams();
 
@@ -51,14 +53,10 @@ export default function OrderPage() {
         }, '2000');
     };
 
-    const onAdminClicked = (product) => {
-        if (isAdminPanelVisible) {
-            setActiveTab(1);
-        } else {
-            setIsAdminPanelVisible(!isAdminPanelVisible);
-            setActiveTab(1);
-        }
-        setProductToModify(product);
+    const onAdminClicked = async (product) => {
+        await toggleActiveTab(1)
+        await setProductToModify(product);
+        titleInputRef.current.focus()
     };
 
     const updateProduct = (productBeingModified) => {
@@ -106,6 +104,7 @@ export default function OrderPage() {
                             productToModify={productToModify}
                             updateProduct={updateProduct}
                             setProductToModify={setProductToModify}
+                            titleInputRef={titleInputRef}
                         />
                     )}
                 </main>

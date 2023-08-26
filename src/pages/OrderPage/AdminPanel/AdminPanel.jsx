@@ -12,6 +12,7 @@ export default function AdminPanel({
     productToModify,
     updateProduct,
     setProductToModify,
+    titleInputRef
 }) {
     const tabs = tabsConfig(
         addProduct,
@@ -19,6 +20,7 @@ export default function AdminPanel({
         productToModify,
         updateProduct,
         setProductToModify,
+        titleInputRef
     );
 
     return (

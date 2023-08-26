@@ -1,18 +1,22 @@
+import { forwardRef } from 'react';
 import styles from './Input.module.css';
 
-export default function Input({
-    Icon,
-    onChange,
-    value,
-    backgroundColor,
-    placeholder,
-    height,
-    changePlaceHolderColor,
-    width,
-    required,
-    type,
-    name,
-}) {
+const Input = forwardRef(function Input(
+    {
+        Icon,
+        onChange,
+        value,
+        backgroundColor,
+        placeholder,
+        height,
+        changePlaceHolderColor,
+        width,
+        required,
+        type,
+        name,
+    },
+    ref,
+) {
     const customContainerStyle = {
         backgroundColor: backgroundColor,
         height: height,
@@ -35,7 +39,10 @@ export default function Input({
                 style={customInputStyle}
                 className={changePlaceHolderColor && styles.inputTag}
                 name={name}
+                ref={ref && ref}
             />
         </div>
     );
-}
+});
+
+export default Input;
