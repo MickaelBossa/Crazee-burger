@@ -8,12 +8,15 @@ export default function ProductCard({
     isAdmin,
     deleteProduct,
     activeEditMode,
+    isActive
 }) {
     const hoverableCardStyle = isAdmin && styles.hoverableCard;
 
+    const activeProductCard = isAdmin && isActive && styles.activeProductCard;
+
     return (
         <div
-            className={`${styles.productCard} ${hoverableCardStyle}`}
+            className={`${styles.productCard} ${hoverableCardStyle} ${activeProductCard}`}
             onClick={isAdmin ? () => activeEditMode(product) : () => {}}
         >
             {isAdmin && (

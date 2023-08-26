@@ -12,14 +12,10 @@ import styles from './OrderPage.module.css';
 
 export default function OrderPage() {
     const [products, setProducts] = useState(fakeMenu.LARGE);
-
     const [isAdmin, setIsAdmin] = useState(false);
-
     const [isAdminPanelVisible, setIsAdminPanelVisible] = useState(true);
     const [activeTab, setActiveTab] = useState(0);
-
     const [hasProductAdded, setHasProductAdded] = useState(false);
-
     const [productToModify, setProductToModify] = useState(EMPTY_PRODUCT);
 
     const params = useParams();
@@ -86,6 +82,9 @@ export default function OrderPage() {
                             isAdmin={isAdmin}
                             deleteProduct={() => deleteProduct(product.id)}
                             activeEditMode={onAdminClicked}
+                            isActive={
+                                product.id === productToModify.id ? true : false
+                            }
                         />
                     ))}
                     {products.length === 0 ? (

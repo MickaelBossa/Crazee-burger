@@ -7,6 +7,44 @@
     border-radius: var(--extraRound);
 }
 
+.activeProductCard {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.activeProductCard .productPrice {
+    color: var(--white);
+}
+
+.activeProductCard .activeCardStyle {
+    background-color: var(--white);
+    color: var(--primary);
+    transition: none;
+}
+.activeProductCard .activeCardStyle button {
+    background-color: var(--white);
+    color: var(--primary);
+    transition: none;
+}
+
+.activeProductCard .activeCardDeleteBtnStyle {
+    color: var(--white);
+    transition: none;
+}
+
+.activeProductCard .activeCardStyle:hover {
+    color: var(--white);
+    background-color: var(--primary);
+    transition: none;
+    border: 1px solid var(--white);
+}
+
+.activeProductCard .activeCardStyle:hover button {
+    color: var(--white);
+    background-color: var(--primary);
+    transition: none;
+}
+
 .hoverableCard:hover {
     cursor: pointer;
     box-shadow: -3px 8px 20px 0px rgba(255, 160, 27, 0.7);
