@@ -10,7 +10,7 @@ export default function AdminUpdateForm({
     productToModify,
     updateProduct,
     setProductToModify,
-    titleInputRef
+    titleInputRef,
 }) {
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -68,7 +68,12 @@ export default function AdminUpdateForm({
                                 "Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)"
                             }
                             onChange={(e) => handleChange(e)}
-                            value={productToModify.imageSource}
+                            value={
+                                productToModify.imageSource !==
+                                '/images/coming-soon.png'
+                                    ? productToModify.imageSource
+                                    : ''
+                            }
                             type="text"
                             backgroundColor={'var(--background_white)'}
                             height="35px"
@@ -88,7 +93,7 @@ export default function AdminUpdateForm({
                             }
                             placeholder={'Prix'}
                             onChange={(e) => handleChange(e)}
-                            value={productToModify.price}
+                            value={productToModify.price !== '0,00' ? productToModify.price : ''}
                             type="text"
                             backgroundColor={'var(--background_white)'}
                             height="35px"
