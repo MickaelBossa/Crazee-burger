@@ -27,8 +27,9 @@ export default function PrimaryButton({
         <div
             className={`${styles.defaultContainer} ${buttonContainerClass} ${className}`}
             style={customPrimaryButtonStyle}
+            onClick={onClick}
         >
-            <button onClick={onClick} style={customBtnTagStyle} type="submit">
+            <button style={customBtnTagStyle} type="submit">
                 {label}
             </button>
             {Icon && Icon}

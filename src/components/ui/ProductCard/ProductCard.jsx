@@ -8,7 +8,7 @@ export default function ProductCard({
     isAdmin,
     deleteProduct,
     activeEditMode,
-    isActive
+    isActive,
 }) {
     const hoverableCardStyle = isAdmin && styles.hoverableCard;
 
@@ -48,6 +48,7 @@ export default function ProductCard({
                     height={'38px'}
                     primary={true}
                     className={styles.activeCardStyle}
+                    onClick={(e) => e.stopPropagation()}
                 />
             </div>
         </div>

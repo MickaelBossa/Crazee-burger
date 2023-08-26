@@ -39,7 +39,8 @@ export default function OrderPage() {
         setIsAdminPanelVisible(!isAdminPanelVisible);
     };
 
-    const deleteProduct = (id) => {
+    const deleteProduct = (id, e) => {
+        e.stopPropagation();
         const newProducts = products.filter((product) => product.id !== id);
         setProducts(newProducts);
     };
@@ -54,9 +55,9 @@ export default function OrderPage() {
     };
 
     const onAdminClicked = async (product) => {
-        await toggleActiveTab(1)
+        await toggleActiveTab(1);
         await setProductToModify(product);
-        titleInputRef.current.focus()
+        titleInputRef.current.focus();
     };
 
     const updateProduct = (productBeingModified) => {
@@ -78,7 +79,7 @@ export default function OrderPage() {
                             key={product.id}
                             product={product}
                             isAdmin={isAdmin}
-                            deleteProduct={() => deleteProduct(product.id)}
+                            deleteProduct={(e) => deleteProduct(product.id, e)}
                             activeEditMode={onAdminClicked}
                             isActive={
                                 product.id === productToModify.id ? true : false
