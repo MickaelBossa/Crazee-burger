@@ -74,24 +74,33 @@ export default function OrderPage() {
             <div className={styles.container}>
                 <NavBar params={params} toggleAdminMode={toggleAdminMode} />
                 <main className={styles.mainContent}>
-                    {products.map((product) => (
-                        <ProductCard
-                            key={product.id}
-                            product={product}
-                            isAdmin={isAdmin}
-                            deleteProduct={(e) => deleteProduct(product.id, e)}
-                            activeEditMode={onAdminClicked}
-                            isActive={
-                                product.id === productToModify.id ? true : false
-                            }
-                        />
-                    ))}
-                    {products.length === 0 ? (
-                        <OutOfStockMsg
-                            isAdmin={isAdmin}
-                            setProducts={setProducts}
-                        />
-                    ) : null}
+                    <div className={styles.basketAndProducts}>
+                        <div className={styles.basket}>basket</div>
+                        <div className={styles.products}>
+                            {products.map((product) => (
+                                <ProductCard
+                                    key={product.id}
+                                    product={product}
+                                    isAdmin={isAdmin}
+                                    deleteProduct={(e) =>
+                                        deleteProduct(product.id, e)
+                                    }
+                                    activeEditMode={onAdminClicked}
+                                    isActive={
+                                        product.id === productToModify.id
+                                            ? true
+                                            : false
+                                    }
+                                />
+                            ))}
+                            {products.length === 0 ? (
+                                <OutOfStockMsg
+                                    isAdmin={isAdmin}
+                                    setProducts={setProducts}
+                                />
+                            ) : null}
+                        </div>
+                    </div>
                     {isAdmin && (
                         <AdminPanel
                             toggleActiveTab={toggleActiveTab}

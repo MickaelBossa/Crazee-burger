@@ -14,11 +14,23 @@
     flex: 1;
     border-radius: 0 0 var(--extraRound) var(--extraRound);
     box-shadow: var(--strongShadow);
-    padding: 50px 50px 150px;
+    overflow-y: scroll; 
+}
 
+.basketAndProducts {
+display: grid;
+grid-template-columns: 350px 1fr;
+}
+
+.basket {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20) inset;
+}
+
+.products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-row-gap: 60px;
     justify-items: center;
     overflow-y: scroll;
+    padding: 50px 50px 150px;
 }
