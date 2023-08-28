@@ -1,0 +1,30 @@
+.adminFormContainer {
+    display: flex;
+}
+
+.leftSide {
+    margin-left: 50px;
+    margin-right: 20px;
+    height: calc(199px - 54px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftSide p {
+    padding: 48px 54px;
+    border: 1px solid var(--greyLight);
+    border-radius: var(--round);
+    color: var(--greySemiDark);
+    font-family: Open Sans;
+    font-size: var(--P0);
+    font-weight: var(--regular);
+    line-height: var(--P3);
+}
+
+.previewProductImg {
+    width: 100px;
+    height: 100px;
+    margin: 48px 58px;
+    object-fit: contain;
+}

@@ -1,0 +1,9 @@
+.infoMsg {
+    color: var(--primary);
+    font-family: Open Sans;
+    font-size: var(--PO);
+}
+
+.inRealTime {
+    text-decoration: underline;
+}

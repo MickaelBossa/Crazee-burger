@@ -3,12 +3,30 @@ import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import styles from './ProductCard.module.css';
 import { TiDelete } from 'react-icons/ti';
 
-export default function ProductCard({ product, isAdmin, deleteProduct }) {
+export default function ProductCard({
+    product,
+    isAdmin,
+    deleteProduct,
+    activeEditMode,
+    isActive,
+}) {
+    const hoverableCardStyle = isAdmin && styles.hoverableCard;
+
+    const activeProductCard = isAdmin && isActive && styles.activeProductCard;
+
     return (
-        <div className={styles.productCard}>
+        <div
+            className={`${styles.productCard} ${hoverableCardStyle} ${activeProductCard}`}
+            onClick={isAdmin ? () => activeEditMode(product) : () => {}}
+        >
             {isAdmin && (
-                <div className={styles.deleteIconContainer} onClick={deleteProduct}>
-                    <TiDelete className={styles.deleteIcon} />
+                <div
+                    className={styles.deleteIconContainer}
+                    onClick={deleteProduct}
+                >
+                    <TiDelete
+                        className={`${styles.deleteIcon} ${styles.activeCardDeleteBtnStyle}`}
+                    />
                 </div>
             )}
 
@@ -29,6 +47,8 @@ export default function ProductCard({ product, isAdmin, deleteProduct }) {
                     label={'Ajouter'}
                     height={'38px'}
                     primary={true}
+                    className={styles.activeCardStyle}
+                    onClick={(e) => e.stopPropagation()}
                 />
             </div>
         </div>

@@ -2,22 +2,23 @@ import { useParams } from 'react-router-dom';
 import { fakeMenu } from '../../fakeData/fakeMenu';
 import NavBar from './NavBar/NavBar';
 import ProductCard from '../../components/ui/ProductCard/ProductCard';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import AdminPanel from './AdminPanel/AdminPanel';
 import AdminContext from '../../context/AdminContext';
 import 'react-toastify/dist/ReactToastify.css';
 import OutOfStockMsg from './OutOfStockMsg/OutOfStockMsg';
+import { EMPTY_PRODUCT } from '../../enums/product';
 import styles from './OrderPage.module.css';
 
 export default function OrderPage() {
     const [products, setProducts] = useState(fakeMenu.LARGE);
-
-    const [isAdmin, setIsAdmin] = useState(false);
-
+    const [isAdmin, setIsAdmin] = useState(true);
     const [isAdminPanelVisible, setIsAdminPanelVisible] = useState(true);
     const [activeTab, setActiveTab] = useState(0);
-
     const [hasProductAdded, setHasProductAdded] = useState(false);
+    const [productToModify, setProductToModify] = useState(EMPTY_PRODUCT);
+
+    const titleInputRef = useRef();
 
     const params = useParams();
 
@@ -38,7 +39,8 @@ export default function OrderPage() {
         setIsAdminPanelVisible(!isAdminPanelVisible);
     };
 
-    const deleteProduct = (id) => {
+    const deleteProduct = (id, e) => {
+        e.stopPropagation();
         const newProducts = products.filter((product) => product.id !== id);
         setProducts(newProducts);
     };
@@ -52,6 +54,21 @@ export default function OrderPage() {
         }, '2000');
     };
 
+    const onAdminClicked = async (product) => {
+        await toggleActiveTab(1);
+        await setProductToModify(product);
+        titleInputRef.current.focus();
+    };
+
+    const updateProduct = (productBeingModified) => {
+        const indexOfProductBeingModified = products.findIndex(
+            (product) => product.id === productBeingModified.id,
+        );
+        const productsCopy = [...products];
+        productsCopy[indexOfProductBeingModified] = productBeingModified;
+        setProducts(productsCopy);
+    };
+
     return (
         <AdminContext.Provider value={isAdmin}>
             <div className={styles.container}>
@@ -62,7 +79,11 @@ export default function OrderPage() {
                             key={product.id}
                             product={product}
                             isAdmin={isAdmin}
-                            deleteProduct={() => deleteProduct(product.id)}
+                            deleteProduct={(e) => deleteProduct(product.id, e)}
+                            activeEditMode={onAdminClicked}
+                            isActive={
+                                product.id === productToModify.id ? true : false
+                            }
                         />
                     ))}
                     {products.length === 0 ? (
@@ -81,6 +102,10 @@ export default function OrderPage() {
                             isAdminPanelVisible={isAdminPanelVisible}
                             addProduct={addProduct}
                             hasProductAdded={hasProductAdded}
+                            productToModify={productToModify}
+                            updateProduct={updateProduct}
+                            setProductToModify={setProductToModify}
+                            titleInputRef={titleInputRef}
                         />
                     )}
                 </main>

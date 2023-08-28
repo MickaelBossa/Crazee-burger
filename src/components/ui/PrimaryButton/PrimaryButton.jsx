@@ -8,6 +8,7 @@ export default function PrimaryButton({
     fontSize,
     primary,
     onClick,
+    className,
 }) {
     const customPrimaryButtonStyle = {
         width: width || '400px',
@@ -24,10 +25,11 @@ export default function PrimaryButton({
 
     return (
         <div
-            className={`${styles.defaultContainer} ${buttonContainerClass}`}
+            className={`${styles.defaultContainer} ${buttonContainerClass} ${className}`}
             style={customPrimaryButtonStyle}
+            onClick={onClick}
         >
-            <button onClick={onClick} style={customBtnTagStyle} type="submit">
+            <button style={customBtnTagStyle} type="submit">
                 {label}
             </button>
             {Icon && Icon}

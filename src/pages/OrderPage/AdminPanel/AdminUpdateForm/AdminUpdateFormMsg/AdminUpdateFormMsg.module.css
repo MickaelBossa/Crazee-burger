@@ -1,0 +1,20 @@
+.updateContainer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 63px;
+}
+
+.updateTxt {
+    color: var(--greyBlue);
+    font-family: Amatic SC;
+    font-size: var(--P3);
+    font-weight: var(--regular);
+    margin-left: 50px;
+}
+
+.updateIcon {
+    width: 20px;
+    height: 20px;
+    color: var(--greyBlue);
+}

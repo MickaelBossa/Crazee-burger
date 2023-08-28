@@ -25,4 +25,12 @@
 .previewProduct {
     width: 100px;
     height: 100px;
+    margin: 48px 58px;
+    object-fit: contain;
+}
+
+.btnAndMsg {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
