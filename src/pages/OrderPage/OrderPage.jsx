@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import OutOfStockMsg from './OutOfStockMsg/OutOfStockMsg';
 import { EMPTY_PRODUCT } from '../../enums/product';
 import styles from './OrderPage.module.css';
+import Basket from './Basket/Basket';
 
 export default function OrderPage() {
     const [products, setProducts] = useState(fakeMenu.LARGE);
@@ -75,26 +76,7 @@ export default function OrderPage() {
                 <NavBar params={params} toggleAdminMode={toggleAdminMode} />
                 <main className={styles.mainContent}>
                     <div className={styles.basketAndProducts}>
-                        <div className={styles.basket}>
-                            <div className={styles.basketTop}>
-                                <p className={styles.basketTopTxt}>
-                                    Total{' '}
-                                    <span className={styles.basketTopPrice}>
-                                        0,00 €
-                                    </span>
-                                </p>
-                            </div>
-                            <div className={styles.basketMainContent}>
-                                <p className={styles.basketMainContentTxt}>
-                                    Votre commande est vide
-                                </p>
-                            </div>
-                            <div className={styles.basketBottom}>
-                                <p className={styles.basketBottomTxt}>
-                                    Codé avec ❤️ et React.js
-                                </p>
-                            </div>
-                        </div>
+                        <Basket />
                         <div className={styles.products}>
                             {products.map((product) => (
                                 <ProductCard
