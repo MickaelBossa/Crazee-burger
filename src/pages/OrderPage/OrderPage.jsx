@@ -12,7 +12,7 @@ import styles from './OrderPage.module.css';
 
 export default function OrderPage() {
     const [products, setProducts] = useState(fakeMenu.LARGE);
-    const [isAdmin, setIsAdmin] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false);
     const [isAdminPanelVisible, setIsAdminPanelVisible] = useState(true);
     const [activeTab, setActiveTab] = useState(0);
     const [hasProductAdded, setHasProductAdded] = useState(false);
