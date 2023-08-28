@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { EMPTY_PRODUCT } from '../../../../enums/product';
 import AdminForm from '../../../../components/ui/AdminForm/AdminForm';
 import PrimaryButton from '../../../../components/ui/PrimaryButton/PrimaryButton';
-import { FiCheck } from 'react-icons/fi';
+import SuccessMessage from './SuccessMessage/SuccessMessage.jsx';
 import styles from './AdminAddForm.module.css';
 
 export default function AdminAddForm({ addProduct, hasProductAdded }) {
@@ -22,12 +22,7 @@ export default function AdminAddForm({ addProduct, hasProductAdded }) {
         };
 
         addProduct(newProductToAdd);
-        setNewProduct({
-            id: '',
-            title: '',
-            imageSource: '',
-            price: '',
-        });
+        setNewProduct(EMPTY_PRODUCT);
     };
 
     const handleChange = (e) => {
@@ -51,17 +46,7 @@ export default function AdminAddForm({ addProduct, hasProductAdded }) {
                         primary={false}
                     />
                     {hasProductAdded && (
-                        <span className={styles.successMsg}>
-                            <FiCheck
-                                width={18}
-                                style={{
-                                    border: '1px solid #60BD4F',
-                                    borderRadius: '50%',
-                                    color: '#60BD4F',
-                                }}
-                            />
-                            Ajouté avec succès !
-                        </span>
+                        <SuccessMessage />
                     )}
                 </div>
             </AdminForm>

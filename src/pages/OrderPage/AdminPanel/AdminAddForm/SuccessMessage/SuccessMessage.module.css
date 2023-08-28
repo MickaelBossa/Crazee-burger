@@ -1,0 +1,11 @@
+.successMsg {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #60bd4f;
+    font-family: Open Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
