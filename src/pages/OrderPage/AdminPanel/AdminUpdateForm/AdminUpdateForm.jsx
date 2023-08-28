@@ -25,7 +25,12 @@ export default function AdminUpdateForm({
                     newProduct={productToModify}
                     onChange={handleChange}
                     titleInputRef={titleInputRef}
-                ><p className={styles.infoMsg}>Cliquer sur un produit du menu pour le modifier <span className={styles.inRealTime}>en temps réel</span></p></AdminForm>
+                >
+                    <p className={styles.infoMsg}>
+                        Cliquer sur un produit du menu pour le modifier
+                        <span className={styles.inRealTime}>en temps réel</span>
+                    </p>
+                </AdminForm>
             )}
         </>
     );
