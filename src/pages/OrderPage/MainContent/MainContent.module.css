@@ -7,11 +7,18 @@
     border-radius: 0 0 var(--extraRound) var(--extraRound);
     box-shadow: var(--strongShadow);
     overflow-y: scroll;
+    overflow-x: hidden;
+
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    overflow-y: hidden;
+    height: calc(95vh - 111px);
 }
 
 .basketAndMenu {
     display: grid;
     grid-template-columns: 25% 1fr;
+    grid-template-rows: 1fr 240px;
     overflow: hidden;
     height: calc(95vh - 111px);
 }

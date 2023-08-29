@@ -21,18 +21,19 @@ export default function MainContent({
     titleInputRef,
 }) {
     return (
-        <main className={styles.mainContent}>
-            <div className={styles.basketAndMenu}>
-                <Basket />
-                <Menu
-                    products={products}
-                    isAdmin={isAdmin}
-                    deleteProduct={deleteProduct}
-                    onAdminClicked={onAdminClicked}
-                    productToModify={productToModify}
-                    setProducts={setProducts}
-                />
-            </div>
+        <main
+            className={styles.mainContent}
+            style={{ gridTemplateRows: isAdmin ? '1fr 240px' : '1fr' }}
+        >
+            <Basket />
+            <Menu
+                products={products}
+                isAdmin={isAdmin}
+                deleteProduct={deleteProduct}
+                onAdminClicked={onAdminClicked}
+                productToModify={productToModify}
+                setProducts={setProducts}
+            />
             {isAdmin && (
                 <AdminPanel
                     toggleActiveTab={toggleActiveTab}

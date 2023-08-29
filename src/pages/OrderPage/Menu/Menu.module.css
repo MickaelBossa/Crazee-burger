@@ -5,4 +5,5 @@
     justify-items: center;
     overflow-y: scroll;
     padding: 50px 50px 150px;
+    max-width: calc(1400px - 25%);
 }

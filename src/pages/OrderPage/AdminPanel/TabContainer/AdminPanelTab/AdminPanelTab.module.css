@@ -7,7 +7,7 @@
     border: 1px solid var(--greyLight);
     border-radius: 5px 5px 0px 0px;
     height: 43px;
-    width: 200px;
+    min-width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
