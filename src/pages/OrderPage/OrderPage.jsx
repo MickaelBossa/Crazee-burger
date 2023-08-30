@@ -1,18 +1,16 @@
 import { useParams } from 'react-router-dom';
 import { fakeMenu } from '../../fakeData/fakeMenu';
 import NavBar from './NavBar/NavBar';
-import ProductCard from '../../components/ui/ProductCard/ProductCard';
 import { useRef, useState } from 'react';
-import AdminPanel from './AdminPanel/AdminPanel';
 import AdminContext from '../../context/AdminContext';
 import 'react-toastify/dist/ReactToastify.css';
-import OutOfStockMsg from './OutOfStockMsg/OutOfStockMsg';
 import { EMPTY_PRODUCT } from '../../enums/product';
+import MainContent from './MainContent/MainContent';
 import styles from './OrderPage.module.css';
 
 export default function OrderPage() {
     const [products, setProducts] = useState(fakeMenu.LARGE);
-    const [isAdmin, setIsAdmin] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false);
     const [isAdminPanelVisible, setIsAdminPanelVisible] = useState(true);
     const [activeTab, setActiveTab] = useState(0);
     const [hasProductAdded, setHasProductAdded] = useState(false);
@@ -73,42 +71,23 @@ export default function OrderPage() {
         <AdminContext.Provider value={isAdmin}>
             <div className={styles.container}>
                 <NavBar params={params} toggleAdminMode={toggleAdminMode} />
-                <main className={styles.mainContent}>
-                    {products.map((product) => (
-                        <ProductCard
-                            key={product.id}
-                            product={product}
-                            isAdmin={isAdmin}
-                            deleteProduct={(e) => deleteProduct(product.id, e)}
-                            activeEditMode={onAdminClicked}
-                            isActive={
-                                product.id === productToModify.id ? true : false
-                            }
-                        />
-                    ))}
-                    {products.length === 0 ? (
-                        <OutOfStockMsg
-                            isAdmin={isAdmin}
-                            setProducts={setProducts}
-                        />
-                    ) : null}
-                    {isAdmin && (
-                        <AdminPanel
-                            toggleActiveTab={toggleActiveTab}
-                            toggleAdminPanelVisibility={
-                                toggleAdminPanelVisibility
-                            }
-                            activeTab={activeTab}
-                            isAdminPanelVisible={isAdminPanelVisible}
-                            addProduct={addProduct}
-                            hasProductAdded={hasProductAdded}
-                            productToModify={productToModify}
-                            updateProduct={updateProduct}
-                            setProductToModify={setProductToModify}
-                            titleInputRef={titleInputRef}
-                        />
-                    )}
-                </main>
+                <MainContent
+                    products={products}
+                    isAdmin={isAdmin}
+                    deleteProduct={deleteProduct}
+                    onAdminClicked={onAdminClicked}
+                    productToModify={productToModify}
+                    setProducts={setProducts}
+                    toggleActiveTab={toggleActiveTab}
+                    toggleAdminPanelVisibility={toggleAdminPanelVisibility}
+                    activeTab={activeTab}
+                    isAdminPanelVisible={isAdminPanelVisible}
+                    addProduct={addProduct}
+                    hasProductAdded={hasProductAdded}
+                    updateProduct={updateProduct}
+                    setProductToModify={setProductToModify}
+                    titleInputRef={titleInputRef}
+                />
             </div>
         </AdminContext.Provider>
     );

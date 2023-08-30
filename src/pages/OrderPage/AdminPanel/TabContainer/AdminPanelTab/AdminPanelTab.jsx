@@ -19,7 +19,7 @@ export default function AdminPanelTab({
                           border: activeTab === index && 'none',
                       }
                     : {
-                          width: '62px',
+                          minWidth: '62px',
                           backgroundColor: !isAdminPanelVisible && '#292729',
                           borderTop: !isAdminPanelVisible && 'none',
                           borderBottom: !isAdminPanelVisible && 'none',

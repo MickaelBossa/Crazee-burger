@@ -1,6 +1,7 @@
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import AdminPanelTab from './AdminPanelTab/AdminPanelTab';
 import { tabsConfig } from '../tabsConfig';
+import styles from './TabContainer.module.css';
 
 export default function TabContainer({
     isAdminPanelVisible,
@@ -11,7 +12,7 @@ export default function TabContainer({
     const tabs = tabsConfig();
 
     return (
-        <>
+        <div className={styles.tabContainer}>
             <AdminPanelTab
                 icon={
                     isAdminPanelVisible ? (
@@ -34,6 +35,6 @@ export default function TabContainer({
                     toggleActiveTab={() => toggleActiveTab(tab.index)}
                 />
             ))}
-        </>
+        </div>
     );
 }
